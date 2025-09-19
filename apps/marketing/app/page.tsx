@@ -9,6 +9,7 @@ import { Solution } from '~/components/sections/solution';
 import { Stats } from '~/components/sections/stats';
 import { Testimonials } from '~/components/sections/testimonials';
 import { HowToUSe } from '~/components/sections/how-to-use';
+import { HowToUSeCard } from '~/components/sections/how-to-use-cards';
 
 export default function IndexPage(): React.JSX.Element {
   return (
@@ -18,6 +19,7 @@ export default function IndexPage(): React.JSX.Element {
       <Problem />
       <Solution />
       <HowToUSe/>
+      <HowToUSeCard/>
       <Stats />
       <Testimonials />
       <FAQ />
