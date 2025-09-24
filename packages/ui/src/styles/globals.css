@@ -10,24 +10,24 @@
 
 :root {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.35 0 255);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.35 0 255);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.35 0 255);
+  --primary: oklch(0.73 0.21 128);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --secondary: oklch(0.96 0.05 130);
+  --secondary-foreground: oklch(0.35 0 255);
+  --muted: oklch(0.96 0.01 260);
+  --muted-foreground: oklch(0.55 0.02 260);
+  --accent: oklch(0.98 0.01 250);
+  --accent-foreground: oklch(0.35 0 255);
+  --destructive: oklch(0.65 0.25 30);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.92 0.01 260);
+  --input: oklch(0.92 0.01 260);
+  --ring: oklch(0.73 0.21 128);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -123,6 +123,13 @@
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   --animate-fadeIn: fadeIn 0.3s ease-in-out;
   --animate-slideIn: slideIn 0.3s ease-in-out;
+
+    /* VideoMule Brand Colors - Clean & Minimal */
+    --color-videomule-green: #66B60C; /* - Primary accent only */
+    --color-videomule-black: #000000; /* #000000 - Headings */
+    --color-videomule-light-green: #F4FFE4; /* #F4FFE4 - Light backgrounds */
+    --color-videomule-white: #FfFFff; /* #FFFFFF - Pure white */
+    --color-videomule-gray: #4B5563; /* #4B5563 - Body text */
 
   @keyframes accordion-down {
     from {

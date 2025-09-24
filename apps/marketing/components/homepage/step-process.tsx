@@ -88,7 +88,7 @@ export default function StepProcess(): React.JSX.Element {
             number: 3,
             logo: Mic,
             color: 'bg-orange-500',
-            heading: "Choose Your Voice<",
+            heading: "Choose Your Voice",
             description: "Select from over 100 professional AI voices in multiple languages and accents. Preview each voice to find the perfect match for your content.",
             point : ["100+ professional voices", "Multiple languages & accents", "Real-time voice preview"],
             browserheading: "videomule.com/voices",
@@ -212,16 +212,17 @@ export default function StepProcess(): React.JSX.Element {
                     {
                         step.map((step , i) => ( 
                             <div key={step.number} className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
-                                {i%2 === 0 ? (
-                                    <>
-                                    <div className="animate-fade-in" style={{animationDelay: "0.2s"}}>
-                                        <div className="flex items-center mb-6">
-                                            <div className={cn(
-                                                step.color,
-                                                "w-12 h-12 rounded-xl flex items-center justify-center text-white mr-4 hover-scale transition-all duration-300 animate-pulse"
-                                            )}>
-                                                <step.logo className="w-6 h-6" />
-                                            </div>
+                                <div className={cn(
+                                    "animate-fade-in order-1", // always first by default
+                                    i % 2 === 1 && "lg:order-2" // swap on desktop if odd
+                                )}>
+                                    <div className="flex items-center mb-6">
+                                        <div className={cn(
+                                            step.color,
+                                            "w-12 h-12 rounded-xl flex items-center justify-center text-white mr-4 hover-scale transition-all duration-300 animate-pulse"
+                                        )}>
+                                            <step.logo className="w-6 h-6" />
+                                        </div>
                                             <h3 className="font-bricolage text-3xl font-bold text-videomule-black">{step.heading}</h3>
                                         </div>
                                         <p className="text-videomule-gray text-lg mb-8 leading-relaxed">
@@ -236,7 +237,10 @@ export default function StepProcess(): React.JSX.Element {
                                             ))}
                                         </div>
                                     </div>
-                                    <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                                    <div className={cn(
+                                        "bg-white rounded-2xl shadow-xl overflow-hidden order-2", // always second by default
+                                        i % 2 === 1 && "lg:order-1" // swap on desktop if odd
+                                    )}>
                                         <div className="bg-gray-100 px-4 py-3 flex items-center">
                                             <div className="flex space-x-2">
                                                 <div className="w-3 h-3 bg-red-400 rounded-full"></div>
@@ -250,50 +254,7 @@ export default function StepProcess(): React.JSX.Element {
                                             </div>
                                         </div>
                                         {step.htmlCode}
-                                    </div>
-                                    </>
-                                ) : (
-                                    <>
-                                    <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                                        <div className="bg-gray-100 px-4 py-3 flex items-center">
-                                            <div className="flex space-x-2">
-                                                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                                                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                                                <div className="w-3 h-3 bg-videomule-green rounded-full"></div>
-                                            </div>
-                                            <div className="flex-1 text-center">
-                                                <div className="bg-white rounded px-3 py-1 text-sm text-videomule-gray inline-block">
-                                                    {step.browserheading}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {step.htmlCode}
-                                    </div>
-                                    <div className="animate-fade-in" style={{animationDelay: "0.2s"}}>
-                                        <div className="flex items-center mb-6">
-                                            <div className={cn(
-                                                step.color,
-                                                "w-12 h-12 rounded-xl flex items-center justify-center text-white mr-4 hover-scale transition-all duration-300 animate-pulse"
-                                            )}>
-                                                <step.logo className="w-6 h-6" />
-                                            </div>
-                                            <h3 className="font-bricolage text-3xl font-bold text-videomule-black">{step.heading}</h3>
-                                        </div>
-                                        <p className="text-videomule-gray text-lg mb-8 leading-relaxed">
-                                            {step.description}
-                                        </p>
-                                        <div className="space-y-3">
-                                            {step.point.map((point)=>(
-                                                <div key={point} className="flex items-center animate-fade-in" style={{animationDelay: "0.4s"}}>
-                                                    <Check className="w-5 h-5 text-videomule-green mr-3" />
-                                                    <span className="text-videomule-black">{point}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    </>
-                                )}
-                                
+                                </div> 
                             </div>
                         ))
                     }
