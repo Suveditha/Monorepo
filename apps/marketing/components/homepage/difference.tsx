@@ -118,7 +118,7 @@ export default function Difference(): React.JSX.Element {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br dark:from-gray-900 from-gray-50 to-videomule-white relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-20 left-20 w-32 h-32 bg-videomule-green/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-40 h-40 bg-blue-400/5 rounded-full blur-3xl"></div>
@@ -175,10 +175,10 @@ export default function Difference(): React.JSX.Element {
                       <video.checkMark className="w-4 h-4" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">
+                      <h4 className="font-semibold dark:text-white text-gray-900 mb-1">
                         {point.heading}
                       </h4>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-600 dark:text-gray-200 text-sm">
                         {point.description}
                       </p>
                     </div>

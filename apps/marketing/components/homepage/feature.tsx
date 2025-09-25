@@ -56,7 +56,7 @@ export default function Feature(): React.JSX.Element {
   ];
   return (
     <section
-      className="py-24 bg-white relative"
+      className="py-24 bg-videomule-white relative"
       id="features"
     >
       <div className="max-w-7xl mx-auto px-4">
@@ -81,7 +81,7 @@ export default function Feature(): React.JSX.Element {
               className="group cursor-pointer"
               key={feature.heading}
             >
-              <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+              <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
                 <div className="aspect-video overflow-hidden">
                   <Image
                     src={feature.image}
