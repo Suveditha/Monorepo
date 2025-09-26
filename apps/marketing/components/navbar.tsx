@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { baseUrl, getPathname, routes } from '@workspace/routes';
-import { buttonVariants } from '@workspace/ui/components/button';
+import { buttonVariants } from '@workspace/ui/components/buttonHome';
 import { Logo } from '@workspace/ui/components/logo';
 import {
   NavigationMenu,
@@ -26,7 +26,7 @@ import { MobileMenu } from '~/components/mobile-menu';
 export function Navbar(): React.JSX.Element {
   const pathname = usePathname();
   return (
-    <section className="sticky inset-x-0 top-0 z-40 border-b bg-background py-4">
+    <section className="sticky inset-x-0 top-0 z-40 bg-background py-4  shadow-[0px_3px_10px_0px_rgba(0,0,0,0.05)]">
       <div className="container">
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-x-9">
@@ -142,8 +142,8 @@ export function Navbar(): React.JSX.Element {
               className={cn(
                 buttonVariants({
                   variant: 'outline'
-                }),
-                'rounded-xl'
+                })
+                //'rounded-[50px]'
               )}
             >
               Sign in
@@ -153,8 +153,8 @@ export function Navbar(): React.JSX.Element {
               className={cn(
                 buttonVariants({
                   variant: 'default'
-                }),
-                'rounded-xl'
+                })
+                //'rounded-[50px]'
               )}
             >
               Start for free

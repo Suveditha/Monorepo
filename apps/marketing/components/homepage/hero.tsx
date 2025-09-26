@@ -10,8 +10,8 @@ import { Badge } from './components/badge';
 
 export default function Hero(): React.JSX.Element {
   return (
-    <section className="pt-32 pb-20 bg-gradient-hero relative">
-      <div className="max-w-7xl mx-auto px-4 text-center">
+    <section className="pt-32 pb-20 bg-gradient-header relative">
+      <div className="max-w-7xl mx-auto px-4 text-center tracking-tight">
         <div className="animate-fade-in">
           <Badge
             variant="secondary"
@@ -19,14 +19,15 @@ export default function Hero(): React.JSX.Element {
           >
             New! AI Voiceover Tool
           </Badge>
-          <h1 className="font-bricolage text-5xl lg:text-7xl font-bold text-videomule-black mb-6 leading-tight animate-fade-in delay-200">
+          <h1 className="font-bricolage text-5xl lg:text-7xl font-bold text-videomule-black mb-6 leading-none animate-fade-in delay-200">
             Add voice to any
             <br />
-            Screen Recording.
+            Screen Recording<span className="text-videomule-green">.</span>
           </h1>
-          <p className="text-xl text-videomule-gray mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in delay-300">
-            Turn silent recordings into engaging videos with AI voiceovers.
-            Generate scripts, choose from 100+ voices, and export instantly.
+          <p className="text-xl text-videomule-green-text mb-12 max-w-3xl mx-auto leading-[1.5em] animate-fade-in delay-300">
+            Easily convert your screen recordings into engaging videos with AI
+            voiceovers. Generate scripts, select realistic voices, and create
+            ready-to-share content quickly and effortlessly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in delay-500">
             <Button
@@ -41,7 +42,7 @@ export default function Hero(): React.JSX.Element {
 
         {/* Browser Mockup with Dashboard */}
         <div className="relative animate-fade-in delay-700 max-w-5xl mx-auto">
-          <div className="bg-gray-100 rounded-t-2xl p-4 border border-gray-200 shadow-elegant hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+          <div className="bg-gray-100 rounded-2xl p-4 border border-gray-200 shadow-elegant hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
               <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse delay-100"></div>

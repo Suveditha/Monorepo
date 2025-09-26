@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Image from 'next/image';
 
 import { Button } from '@workspace/ui/components/buttonHome';
 import { cn } from '@workspace/ui/lib/utils';
@@ -47,7 +48,7 @@ export default function Pricing(): React.JSX.Element {
   ];
   return (
     <section
-      className="py-24 bg-gray-50 dark:bg-gray-950 relative"
+      className="py-24 bg-videomule-light-green relative"
       id="pricing"
     >
       <div className="max-w-6xl mx-auto px-4">
@@ -55,7 +56,7 @@ export default function Pricing(): React.JSX.Element {
           <h2 className="font-bricolage text-4xl lg:text-5xl font-bold text-videomule-black mb-6">
             Pricing Plans
           </h2>
-          <p className="text-xl text-videomule-gray max-w-2xl mx-auto">
+          <p className="text-xl text-videomule-green-text max-w-2xl mx-auto">
             Choose the plan that fits your needs. Upgrade or downgrade anytime.
           </p>
         </div>
@@ -93,7 +94,7 @@ export default function Pricing(): React.JSX.Element {
                   <div
                     className={cn(
                       price.priceColor,
-                      'inline-block px-3 py-1 rounded-full text-sm font-medium'
+                      ' hidden px-3 py-1 rounded-full text-sm font-medium'
                     )}
                   >
                     {price.pricePill}
@@ -106,6 +107,13 @@ export default function Pricing(): React.JSX.Element {
                       key={i}
                       className="flex items-center"
                     >
+                      <Image
+                        src="/assets/sample/homepage/check-mark.svg"
+                        width={20}
+                        height={20}
+                        alt="Check Mark"
+                        className="mr-2.5"
+                      />
                       <span>{detail}</span>
                     </li>
                   ))}

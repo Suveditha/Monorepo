@@ -12,7 +12,7 @@
 
 :root {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.35 0 255);
+  --foreground: oklch(0.173 0 0); /* #101010 */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.35 0 255);
   --popover: oklch(1 0 0);
@@ -27,7 +27,7 @@
   --accent-foreground: oklch(0.35 0 255);
   --destructive: oklch(0.65 0.25 30);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.01 260);
+  --border: oklch(0.5288 0.112 162.72); /* #0B7F58 */
   --input: oklch(0.92 0.01 260);
   --ring: oklch(0.73 0.21 128);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -46,11 +46,13 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* Videomule color*/
-  --videomule-green: oklch(0.73 0.21 128);    /* #66B60C */
-  --videomule-black: oklch(0 0 0);            /* #000000 */
-  --videomule-light-green: oklch(0.97 0.05 128); /* #F4FFE4 */
+  --videomule-green: oklch(0.5288 0.112 162.72);    /* #0B7F58 */
+  --videomule-green-text: oklch(0.3133 0.0295 163.65); /* #23362D */
+  --videomule-green-hover: oklch(0.4529 0.0943 163.37); /* #096647 */
+  --videomule-black: oklch(0.173 0 0); /* #101010 */
+  --videomule-light-green: oklch(0.9943 0.0138 124.54); /* #FBFFF5 */
   --videomule-white: oklch(1 0 0);            /* #FFFFFF */
-  --videomule-gray: oklch(0.35 0.02 260);     /* #4B5563 */
+  --videomule-gray: oklch(0.4461 0.0263 256.8);     /* #4B5563 */
 
 }
 
@@ -90,6 +92,8 @@
 
   /* Videomule Color */
   --videomule-green: oklch(0.78 0.21 128);    /* #8CD63C – brighter for contrast */
+  --videomule-green-text: oklch(0.82 0.14 163.5);
+  --videomule-green-hover: oklch(0.72 0.19 163.5);
   --videomule-black: oklch(1 0 0);            /* #FFFFFF */
   --videomule-light-green: oklch(0.23 0.05 130); /* #1A260F – deep muted green */
   --videomule-white: oklch(0.07 0 0);         /* #0D0D0D */
@@ -98,7 +102,7 @@
 
 @theme inline {
   --font-inter: 'Inter', 'sans-serif';
-  --font-bricolage: 'Bricolage Grotesque', 'sans-serif';
+  --font-bricolage: 'Bricolage Grotesque';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -144,11 +148,13 @@
   --animate-slideIn: slideIn 0.3s ease-in-out;
 
     /* VideoMule Brand Colors - Clean & Minimal */
-  --color-videomule-green: var(--videomule-green); /* - Primary accent only */
-  --color-videomule-black: var(--videomule-black); /* #000000 - Headings */
-  --color-videomule-light-green: var(--videomule-light-green); /* #F4FFE4 - Light backgrounds */
-  --color-videomule-white: var(--videomule-white); /* #FFFFFF - Pure white */
-  --color-videomule-gray: var(--videomule-gray); /* #4B5563 - Body text */
+  --color-videomule-green: var(--videomule-green);
+  --color-videomule-green-text: var(--videomule-green-text);
+  --color-videomule-green-hover: var(--videomule-green-hover);
+  --color-videomule-black: var(--videomule-black);
+  --color-videomule-light-green: var(--videomule-light-green);
+  --color-videomule-white: var(--videomule-white);
+  --color-videomule-gray: var(--videomule-gray);
 
   /* Gradient Color */
   --gradient-hero: linear-gradient(135deg, var(--videomule-white) 0%, var(--videomule-light-green) 100%);
@@ -267,6 +273,22 @@
     background: var(--gradient-hero);
   }
   
+  .bg-gradient-header {
+    background: 
+      radial-gradient(110.31% 74.95% at 53% 78%, rgba(255, 255, 0, 0.30) 0%, rgba(255, 255, 0, 0.00) 50%),
+      radial-gradient(128.69% 100.41% at 71% 91%, rgba(51, 255, 0, 0.30) 0%, rgba(51, 255, 0, 0.00) 50%),
+      radial-gradient(128.69% 97.58% at 31% 91%, rgba(255, 128, 0, 0.17) 0%, rgba(255, 128, 0, 0.00) 50%),
+      oklch(0.9943 0.0138 124.54); /* Light green fallback fill */
+  }
+
+  .dark .bg-gradient-header {
+    background: 
+      radial-gradient(110.31% 74.95% at 53% 78%, rgba(255, 255, 0, 0.15) 0%, rgba(255, 255, 0, 0.00) 50%),
+      radial-gradient(128.69% 100.41% at 71% 91%, rgba(51, 255, 0, 0.20) 0%, rgba(51, 255, 0, 0.00) 50%),
+      radial-gradient(128.69% 97.58% at 31% 91%, rgba(255, 128, 0, 0.12) 0%, rgba(255, 128, 0, 0.00) 50%),
+      oklch(0.23 0.05 130); /* Dark muted green fallback fill */
+  }
+
   .bg-gradient-section {
     background: var(--gradient-section);
   }

@@ -120,12 +120,15 @@ export default function StepProcess(): React.JSX.Element {
           <div className="flex space-x-3">
             <Button
               variant="outline"
-              className="flex-1"
+              className="flex-1 border border-videomule-gray text-videomule-gray"
             >
               <Edit className="w-4 h-4 mr-2" />
               Edit Script
             </Button>
-            <Button className="flex-1 bg-purple-500 hover:bg-purple-600 rounded-full">
+            <Button
+              variant="outline"
+              className="flex-1 rounded-full"
+            >
               Continue
             </Button>
           </div>
@@ -230,7 +233,7 @@ export default function StepProcess(): React.JSX.Element {
       color: 'bg-videomule-green',
       heading: 'AI Generates the Voice & Syncs to the Video',
       description:
-        'Our advanced AI analyzes your video content and creates a natural, professional script that matches your recording perfectly.',
+        'Your AI voiceover is automatically synced with your video. Preview the final result and export in HD quality ready to share anywhere.',
       point: [
         'Perfect AI synchronization',
         'HD quality export',
@@ -290,7 +293,7 @@ export default function StepProcess(): React.JSX.Element {
           <h2 className="font-bricolage text-5xl lg:text-6xl font-bold text-videomule-black mb-6 animate-fade-in delay-200">
             How VideoMule Works
           </h2>
-          <p className="text-xl text-videomule-gray max-w-3xl mx-auto leading-relaxed animate-fade-in delay-300">
+          <p className="text-xl text-videomule-green-text max-w-3xl mx-auto leading-relaxed tracking-[-0.01em] animate-fade-in delay-300">
             Turn your silent screen recordings into engaging videos with
             professional AI voiceovers in minutes
           </p>
@@ -303,7 +306,7 @@ export default function StepProcess(): React.JSX.Element {
             >
               <div
                 className={cn(
-                  'animate-fade-in order-1', // always first by default
+                  'animate-fade-in order-1 max-w-[500px]', // always first by default
                   i % 2 === 1 && 'lg:order-2' // swap on desktop if odd
                 )}
               >
@@ -320,18 +323,18 @@ export default function StepProcess(): React.JSX.Element {
                     {step.heading}
                   </h3>
                 </div>
-                <p className="text-videomule-gray text-lg mb-8 leading-relaxed">
+                <p className="text-videomule-gray text-lg mb-8 tracking-[-0.02em] leading-relaxed">
                   {step.description}
                 </p>
                 <div className="space-y-3">
-                  {step.point.map((point) => (
+                  {step.point.map((point, i) => (
                     <div
-                      key={point}
+                      key={i}
                       className="flex items-center animate-fade-in"
                       style={{ animationDelay: '0.4s' }}
                     >
                       <Check className="w-5 h-5 text-videomule-green mr-3" />
-                      <span className="text-videomule-black">{point}</span>
+                      <span className="text-videomule-gray">{point}</span>
                     </div>
                   ))}
                 </div>

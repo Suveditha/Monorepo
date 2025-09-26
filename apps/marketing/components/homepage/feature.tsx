@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Image from 'next/image';
-import { ArrowRight, Download, Edit, Headphones, Mic } from 'lucide-react';
+import { Download, Edit, Headphones, Mic } from 'lucide-react';
 
 import { Button } from '@workspace/ui/components/buttonHome';
 import { cn } from '@workspace/ui/lib/utils';
@@ -60,7 +60,7 @@ export default function Feature(): React.JSX.Element {
       id="features"
     >
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <Badge
             variant="secondary"
             className="mb-6 text-videomule-green bg-videomule-green/10 border-videomule-green/20"
@@ -75,7 +75,7 @@ export default function Feature(): React.JSX.Element {
             professional videos with AI voiceovers
           </p>
         </div>
-        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 mb-16">
           {feature.map((feature) => (
             <div
               className="group cursor-pointer"
@@ -91,7 +91,7 @@ export default function Feature(): React.JSX.Element {
                   />
                 </div>
                 <div className="p-8">
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-5">
                     <div
                       className={cn(
                         feature.color,
@@ -100,11 +100,11 @@ export default function Feature(): React.JSX.Element {
                     >
                       <feature.logo className="w-6 h-6" />
                     </div>
-                    <h3 className="font-bricolage text-2xl font-bold text-videomule-black">
+                    <h3 className="font-bricolage text-3xl font-bold text-videomule-black">
                       {feature.heading}
                     </h3>
                   </div>
-                  <p className="text-videomule-gray text-lg leading-relaxed mb-6">
+                  <p className="text-videomule-gray max-w-[511px] text-lg leading-relaxed mb-8">
                     {feature.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -127,13 +127,12 @@ export default function Feature(): React.JSX.Element {
           ))}
         </div>
         {/* Call to Action */}
-        <div className="text-center mt-16">
+        <div className="text-center">
           <Button
             size="lg"
-            className="text-lg px-8 py-4 hover-scale transition-all duration-300 hover:shadow-lg"
+            className="text-lg px-10 py-3 hover-scale transition-all duration-300 hover:shadow-lg"
           >
-            Try All Features Free
-            <ArrowRight className="ml-2 h-5 w-5" />
+            Try All Features
           </Button>
         </div>
       </div>

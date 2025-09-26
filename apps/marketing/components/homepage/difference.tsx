@@ -118,7 +118,7 @@ export default function Difference(): React.JSX.Element {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br dark:from-gray-900 from-gray-50 to-videomule-white relative overflow-hidden">
+    <section className="py-24 bg-gradient-header relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-20 left-20 w-32 h-32 bg-videomule-green/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-40 h-40 bg-blue-400/5 rounded-full blur-3xl"></div>
@@ -135,7 +135,7 @@ export default function Difference(): React.JSX.Element {
           <h2 className="font-bricolage text-4xl lg:text-6xl font-bold text-videomule-black mb-6">
             Before vs After VideoMule
           </h2>
-          <p className="text-xl text-videomule-gray max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-videomule-green-text max-w-3xl mx-auto leading-relaxed">
             Transform your silent screen recordings into professional, engaging
             content that captivates your audience
           </p>
@@ -145,14 +145,14 @@ export default function Difference(): React.JSX.Element {
           {video.map((video) => (
             //Video state
             <div
-              className="space-y-8"
+              className="space-y-8 p-9 rounded-2xl bg-videomule-white"
               key={video.state}
             >
               <div className="text-center">
                 <div
                   className={cn(
                     video.color,
-                    'inline-flex items-center rounded-full px-6 py-3 mb-6'
+                    'inline-flex items-center rounded-full px-6 py-3'
                   )}
                 >
                   <video.checkMark className="w-5 h-5 mr-2" />
@@ -175,10 +175,10 @@ export default function Difference(): React.JSX.Element {
                       <video.checkMark className="w-4 h-4" />
                     </div>
                     <div>
-                      <h4 className="font-semibold dark:text-white text-gray-900 mb-1">
+                      <h4 className="font-semibold text-lg text-videomule-black mb-1">
                         {point.heading}
                       </h4>
-                      <p className="text-gray-600 dark:text-gray-200 text-sm">
+                      <p className="text-videomule-gray text-base">
                         {point.description}
                       </p>
                     </div>
