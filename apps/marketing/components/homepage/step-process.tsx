@@ -231,7 +231,7 @@ export default function StepProcess(): React.JSX.Element {
       order: 'lg:order-1',
       logo: Download,
       color: 'bg-videomule-green',
-      heading: 'AI Generates the Voice & Syncs to the Video',
+      heading: 'Get final Edited video with VoiceOver Synced to Visuals',
       description:
         'Your AI voiceover is automatically synced with your video. Preview the final result and export in HD quality ready to share anywhere.',
       point: [

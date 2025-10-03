@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Check, Mic, Monitor, X } from 'lucide-react';
+import Image from 'next/image';
+import { Check, X } from 'lucide-react';
 
 import { cn } from '@workspace/ui/lib/utils';
 
@@ -25,11 +26,13 @@ export default function Difference(): React.JSX.Element {
             </div>
           </div>
           <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center relative">
-            <div className="text-gray-500 text-center">
-              <Monitor className="w-16 h-16 mx-auto mb-4 opacity-50" />
-              <p className="text-lg font-medium">Silent Video</p>
-              <p className="text-sm">No narration • Hard to follow</p>
-            </div>
+            <Image
+              className="absolute w-full h-full"
+              src="/assets/sample/homepage/silent.avif"
+              alt="Video withe AI voice"
+              width={502}
+              height={336}
+            />
             {/* Muted Icon */}
             <div className="absolute top-4 right-4 bg-red-500 rounded-full p-2">
               <X className="w-4 h-4 text-white" />
@@ -71,13 +74,13 @@ export default function Difference(): React.JSX.Element {
             </div>
           </div>
           <div className="aspect-video bg-gradient-to-br from-videomule-green/10 to-blue-50 flex items-center justify-center relative">
-            <div className="text-videomule-black text-center">
-              <Mic className="w-16 h-16 mx-auto mb-4 text-videomule-green" />
-              <p className="text-lg font-medium">Engaging Video</p>
-              <p className="text-sm text-videomule-gray">
-                AI narration • Easy to follow
-              </p>
-            </div>
+            <Image
+              className="absolute w-full h-full"
+              src="/assets/sample/homepage/audio.avif"
+              alt="Video withe AI voice"
+              width={502}
+              height={336}
+            />
             {/* Sound Waves Animation */}
             <div className="absolute top-4 right-4 bg-videomule-green rounded-full p-2">
               <div className="flex items-center space-x-1">
