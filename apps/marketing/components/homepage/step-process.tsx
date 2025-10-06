@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Image from 'next/image';
 import {
   Check,
   Download,
@@ -248,8 +249,15 @@ export default function StepProcess(): React.JSX.Element {
           {/* Video Preview */}
           <div className="bg-gray-900 rounded-xl p-4 mb-6">
             <div className="aspect-video bg-gray-800 rounded-lg flex items-center justify-center relative">
-              <Play className="w-12 h-12 text-white" />
-              <div className="absolute bottom-2 left-2 bg-videomule-green text-white text-xs px-2 py-1 rounded">
+              <Image
+                className="absolute w-full h-full"
+                src="/assets/sample/homepage/videoBG.avif"
+                alt="Get final Edited video with VoiceOver Synced to Visuals"
+                width={504}
+                height={236}
+              />
+              <Play className="z-[1] w-12 h-12 p-3 bg-videomule-white text-videomule-green rounded-4xl" />
+              <div className="z-[1] absolute bottom-2 left-2 bg-videomule-green text-white text-xs px-2 py-1 rounded">
                 With AI Voice
               </div>
             </div>
@@ -314,7 +322,7 @@ export default function StepProcess(): React.JSX.Element {
                   <div
                     className={cn(
                       step.color,
-                      'w-12 h-12 rounded-xl flex items-center justify-center text-white mr-4 hover-scale transition-all duration-300 animate-pulse'
+                      'w-12 h-12 p-3 rounded-xl flex items-center justify-center text-white mr-4 hover-scale transition-all duration-300 animate-pulse'
                     )}
                   >
                     <step.logo className="w-6 h-6" />

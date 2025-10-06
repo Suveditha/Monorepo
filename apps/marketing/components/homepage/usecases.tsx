@@ -91,7 +91,7 @@ export default function UseCases(): React.JSX.Element {
             return (
               <Card
                 key={i}
-                className="group bg-white hover:shadow-elegant transition-all duration-300 border border-gray-100 hover:border-videomule-green"
+                className="group bg-videomule-white hover:shadow-elegant transition-all duration-300 border border-videomule-gray/20 hover:border-videomule-green"
               >
                 <CardContent className="p-6">
                   <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-6 relative overflow-hidden">

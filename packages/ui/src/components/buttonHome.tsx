@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'px-10 py-3 rounded-full border border-videomule-green bg-videomule-green text-white shadow-button hover:bg-videomule-green-hover hover:shadow-button-hover transition-all duration-200',
+          'px-10 py-3 rounded-full border border-videomule-green bg-videomule-green text-videomule-white shadow-button hover:bg-videomule-green-hover hover:shadow-button-hover transition-all duration-200',
         destructive:
           'rounded-full bg-destructive text-destructive-foreground hover:bg-destructive/90',
         outline:

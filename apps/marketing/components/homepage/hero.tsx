@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Image from 'next/image';
-import { ChevronRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 import { Button } from '@workspace/ui/components/buttonHome';
 
@@ -35,7 +35,9 @@ export default function Hero(): React.JSX.Element {
               className="text-lg px-8 py-4 hover-scale transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
             >
               Start for Free
-              <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <span className="ml-2 flex items-center justify-center w-8 h-8 rounded-full bg-videomule-white transition-transform duration-300 group-hover:translate-x-1">
+                <ArrowUpRight className="text-videomule-black h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </span>
             </Button>
           </div>
         </div>
