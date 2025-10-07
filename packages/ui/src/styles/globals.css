@@ -92,7 +92,7 @@
 
   /* Videomule Color */
   --videomule-green: oklch(0.78 0.21 128);    /* #8CD63C – brighter for contrast */
-  --videomule-green-text: oklch(0.82 0.14 163.5);
+  --videomule-green-text: oklch(0.88 0.01 250);
   --videomule-green-hover: oklch(0.72 0.19 163.5);
   --videomule-black: oklch(1 0 0);            /* #FFFFFF */
   --videomule-light-green: oklch(0.23 0.05 130); /* #1A260F – deep muted green */

@@ -142,7 +142,7 @@ export default function Testimonial(): React.JSX.Element {
                 key={`${t.name}-${index}`}
                 className="border border-transparent hover:border-videomule-green bg-videomule-white rounded-3xl p-8 shadow-card hover:shadow-glow transform hover:scale-105 transition-all duration-500 cursor-pointer group"
               >
-                <div className="flex flex-col items-center text-center mb-6">
+                <div className="flex flex-col items-center text-center mb-8">
                   <img
                     src={t.img}
                     alt={t.name}
@@ -156,8 +156,12 @@ export default function Testimonial(): React.JSX.Element {
                   </div>
                 </div>
 
+                <p className="text-videomule-gray leading-relaxed text-center group-hover:text-videomule-black transition-colors duration-300">
+                  “{t.quote}”
+                </p>
+
                 {/* Stars */}
-                <div className="flex items-center justify-center text-orange-400 mb-6">
+                <div className="flex items-center justify-center text-orange-400 mt-8">
                   {[...Array(t.rating)].map((_, i) => (
                     <Star
                       key={i}
@@ -168,10 +172,6 @@ export default function Testimonial(): React.JSX.Element {
                     {t.rating.toFixed(1)}
                   </span>
                 </div>
-
-                <p className="text-videomule-gray leading-relaxed text-center group-hover:text-videomule-black transition-colors duration-300">
-                  “{t.quote}”
-                </p>
               </div>
             ))}
           </div>
@@ -190,7 +190,9 @@ export default function Testimonial(): React.JSX.Element {
                 <div
                   key={i}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    i === current ? 'bg-orange-400 scale-110' : 'bg-gray-300'
+                    i === current
+                      ? 'bg-videomule-green scale-110'
+                      : 'bg-gray-300'
                   }`}
                 ></div>
               ))}

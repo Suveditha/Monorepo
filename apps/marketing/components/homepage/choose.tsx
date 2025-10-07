@@ -16,6 +16,7 @@ export default function WhyChoose(): React.JSX.Element {
       cardDarkBgColor:
         '[background:linear-gradient(135deg, rgba(30,58,138,0.35) 0%, rgba(37,99,235,0.35) 100%)]',
       border: 'border-[#DBEAFE]',
+      darkBorder: 'border-[#1E3A8A]',
       heading: 'Experienced Professionals',
       description:
         'Lorem ipsum is simply dummy text of the printing and typesetting industry.'
@@ -28,6 +29,7 @@ export default function WhyChoose(): React.JSX.Element {
       cardDarkBgColor:
         '[background:linear-gradient(135deg, rgba(154,52,18,0.4) 0%, rgba(234,88,12,0.4) 100%)]',
       border: 'border-[#FED7AA]',
+      darkBorder: 'border-[#7C2D12]',
       heading: 'Satisfaction Guarantee',
       description:
         'Lorem ipsum is simply dummy text of the printing and typesetting industry.'
@@ -40,6 +42,7 @@ export default function WhyChoose(): React.JSX.Element {
       cardDarkBgColor:
         '[background:linear-gradient(135deg, rgba(79,70,229,0.35) 0%, rgba(147,51,234,0.35) 100%)]',
       border: 'border-[#E9E4FF]',
+      darkBorder: 'border-[#4C1D95]',
       heading: 'Affordable Prices',
       description:
         'Lorem ipsum is simply dummy text of the printing and typesetting industry.'
@@ -52,6 +55,7 @@ export default function WhyChoose(): React.JSX.Element {
       cardDarkBgColor:
         '[background: linear-gradient(135deg, rgba(22,101,52,0.4) 0%, rgba(34,197,94,0.4) 100%)]',
       border: 'border-[#BBF7D0]',
+      darkBorder: 'border-[#14532D]',
       heading: 'Reliable & Trustworthy',
       description:
         'Lorem ipsum is simply dummy text of the printing and typesetting industry.'
@@ -62,14 +66,14 @@ export default function WhyChoose(): React.JSX.Element {
     <section className="py-24 bg-videomule-white relative">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-20 animate-fade-in">
+        <div className="text-center mb-15 animate-fade-in">
           <Badge
             variant="secondary"
             className="mb-6 text-videomule-green bg-videomule-green/10 border-videomule-green/20"
           >
-            Use Cases
+            Why Choose Us
           </Badge>
-          <h2 className="font-bricolage text-4xl lg:text-6xl font-bold text-videomule-black mb-6">
+          <h2 className="font-bricolage text-4xl lg:text-6xl font-bold text-videomule-black mb-4">
             Why choose us?
           </h2>
           <p className="text-lg text-videomule-gray max-w-800px mx-auto leading-relaxed">
@@ -80,7 +84,7 @@ export default function WhyChoose(): React.JSX.Element {
         </div>
 
         {/* Benefits Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6.5">
           {card.map((card, i) => (
             <Card
               key={i}
@@ -88,6 +92,7 @@ export default function WhyChoose(): React.JSX.Element {
                 card.cardBgColor,
                 `dark:${card.cardDarkBgColor}`,
                 card.border,
+                `dark:${card.darkBorder}`,
                 'p-8 text-center hover-scale transition-all duration-300 hover:shadow-lg animate-fade-in cursor-pointer border rounded-xl'
               )}
             >

@@ -22,7 +22,7 @@ export default function Feature(): React.JSX.Element {
     },
     {
       logo: Download,
-      image: '/assets/sample/feature-instant-export.jpg',
+      image: '/assets/sample/feature-instant-export.avif',
       color: 'bg-videomule-green/10 text-videomule-green',
       heading: 'Export Instantly',
       description:
@@ -56,26 +56,26 @@ export default function Feature(): React.JSX.Element {
   ];
   return (
     <section
-      className="py-24 bg-videomule-white relative"
+      className="py-28 bg-videomule-white relative"
       id="features"
     >
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-15">
           <Badge
             variant="secondary"
             className="mb-6 text-videomule-green bg-videomule-green/10 border-videomule-green/20"
           >
             Key Features
           </Badge>
-          <h2 className="font-bricolage text-5xl lg:text-6xl font-bold text-videomule-black mb-6">
+          <h2 className="font-bricolage text-5xl lg:text-6xl font-bold text-videomule-black mb-4">
             Powerful Features
           </h2>
-          <p className="text-xl text-videomule-gray max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-videomule-gray max-w-3xl mx-auto leading-relaxed">
             Everything you need to transform your screen recordings into
             professional videos with AI voiceovers
           </p>
         </div>
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-12.5 mb-15">
           {feature.map((feature) => (
             <div
               className="group cursor-pointer"

@@ -12,28 +12,28 @@ export default function Cta(): React.JSX.Element {
         alt="CTA Image"
         width={162}
         height={100}
-        className="absolute top-20 left-20 -rotate-15 md:block hidden"
+        className="absolute top-20 left-20 -rotate-15 md:block hidden dark:invert"
       />
       <Image
         src="/assets/sample/homepage/button.avif"
         alt="CTA Image"
         width={70}
         height={80}
-        className="absolute bottom-22 right-28 md:block hidden"
+        className="absolute bottom-22 right-28 md:block hidden dark:invert"
       />
       <Image
         src="/assets/sample/homepage/CTA-Swril-2.avif"
         alt="CTA Image"
         width={42}
         height={58}
-        className="absolute bottom-22 left-24 md:block hidden"
+        className="absolute bottom-22 left-24 md:block hidden dark:invert"
       />
       <Image
         src="/assets/sample/homepage/CTA-Swirl-1.avif"
         alt="CTA Image"
         width={48}
         height={48}
-        className="absolute top-17 right-20 md:block hidden"
+        className="absolute top-17 right-20 md:block hidden dark:invert"
       />
       <div className="max-w-7xl mx-auto px-4 text-center tracking-tight">
         <div className="animate-fade-in">

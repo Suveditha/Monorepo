@@ -53,18 +53,18 @@ export default function UseCases(): React.JSX.Element {
     }
   ];
   return (
-    <section className="py-24 relative">
+    <section className="py-28 relative">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-20 animate-fade-in">
+        <div className="text-center mb-15 animate-fade-in">
           <Badge
             variant="secondary"
             className="mb-6 text-videomule-green bg-videomule-green/10 border-videomule-green/20"
           >
             Use Cases
           </Badge>
-          <h2 className="font-bricolage text-4xl lg:text-6xl font-bold text-videomule-black mb-6">
-            What You Can Create with VideoMule
+          <h2 className="font-bricolage text-4xl lg:text-6xl font-bold text-videomule-black mb-4">
+            Perfect For Every Creator
           </h2>
           <p className="text-xl text-videomule-gray max-w-3xl mx-auto leading-relaxed">
             Transform any type of content into professional, narrated videos
@@ -91,9 +91,9 @@ export default function UseCases(): React.JSX.Element {
             return (
               <Card
                 key={i}
-                className="group bg-videomule-white hover:shadow-elegant transition-all duration-300 border border-videomule-gray/20 hover:border-videomule-green"
+                className="group bg-videomule-white hover:shadow-[0_5px_20px_0_#66B60C26] transition-all duration-300 border border-videomule-gray/20 hover:border-videomule-green"
               >
-                <CardContent className="p-6">
+                <CardContent className="p-7">
                   <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-6 relative overflow-hidden">
                     {/* Image (visible when not hovered) */}
                     <Image
@@ -124,7 +124,7 @@ export default function UseCases(): React.JSX.Element {
                     </button>
                   </div>
 
-                  <h3 className="font-bricolage text-xl font-bold text-videomule-black mb-3 group-hover:text-videomule-green transition-colors">
+                  <h3 className="font-bricolage text-2xl font-bold text-videomule-black mb-3 group-hover:text-videomule-green transition-colors">
                     {useCase.heading}
                   </h3>
                   <p className="text-videomule-gray leading-relaxed">

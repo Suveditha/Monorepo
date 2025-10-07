@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { Button } from '@workspace/ui/components/buttonHome';
 import { cn } from '@workspace/ui/lib/utils';
 
+import { Badge } from './components/badge';
+
 export default function Pricing(): React.JSX.Element {
   const pricing = [
     {
@@ -48,30 +50,37 @@ export default function Pricing(): React.JSX.Element {
   ];
   return (
     <section
-      className="py-24 bg-videomule-light-green relative"
+      className="py-28 bg-videomule-light-green relative"
       id="pricing"
     >
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-bricolage text-4xl lg:text-5xl font-bold text-videomule-black mb-6">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-15">
+          <Badge
+            variant="secondary"
+            className="mb-6 text-videomule-green bg-videomule-green/10 border-videomule-green/20"
+          >
+            Pricing
+          </Badge>
+          <h2 className="font-bricolage text-5xl lg:text-6xl font-bold text-videomule-black mb-4">
             Pricing Plans
           </h2>
-          <p className="text-xl text-videomule-green-text max-w-2xl mx-auto">
+          <p className="text-lg text-videomule-gray max-w-3xl mx-auto leading-relaxed">
             Choose the plan that fits your needs. Upgrade or downgrade anytime.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {pricing.map((price, i) => {
             const isPlus = price.plan === 'Plus';
             return (
               <div
                 key={i}
                 className={cn(
-                  'bg-videomule-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 relative',
+                  'bg-videomule-white rounded-2xl border border-gray-200 p-8 hover:shadow-lg transition-all duration-300 relative',
                   isPlus
                     ? 'border-2 border-videomule-green'
-                    : 'border border-gray-200'
+                    : 'border border-gray-200',
+                  isPlus ? 'shadow-[0_5px_20px_0_#66B60C26]' : ''
                 )}
               >
                 {isPlus && (
@@ -85,7 +94,7 @@ export default function Pricing(): React.JSX.Element {
                   <h3 className="font-bricolage text-2xl font-bold text-videomule-black mb-4">
                     {price.plan}
                   </h3>
-                  <div className="mb-4">
+                  <div className="mb-10">
                     <span className="text-5xl font-bold text-videomule-black">
                       {price.price}
                     </span>
@@ -101,11 +110,11 @@ export default function Pricing(): React.JSX.Element {
                   </div>
                 </div>
 
-                <ul className="space-y-4 mb-8 text-sm text-videomule-gray">
+                <ul className="space-y-4 mb-10 text-videomule-gray">
                   {price.details.map((detail, i) => (
                     <li
                       key={i}
-                      className="flex items-center"
+                      className="flex items-center mb-5"
                     >
                       <Image
                         src="/assets/sample/homepage/check-mark.svg"
