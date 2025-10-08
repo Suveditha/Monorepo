@@ -11,7 +11,7 @@ export default function Testimonial(): React.JSX.Element {
       name: 'Sarah C., Content Creator',
       role: 'Recent graduate, Marketing at VideoMule',
       img: '/assets/sample/homepage/Sarah.avif',
-      rating: 5,
+      rating: 4,
       quote:
         'VideoMule is the best solution for anyone looking to take control of their video content. Its analysis is detailed, features are comprehensive, and the interface is incredibly user-friendly!'
     },
@@ -87,7 +87,7 @@ export default function Testimonial(): React.JSX.Element {
   const visibleSlides = getVisibleSlides();
 
   return (
-    <section className="py-24 bg-videomule-gray/5 relative overflow-hidden">
+    <section className="py-28 bg-videomule-gray/5 relative overflow-hidden">
       {/* Background stars */}
       <div className="absolute top-12 left-12 text-videomule-black/10">
         <Star
@@ -118,14 +118,14 @@ export default function Testimonial(): React.JSX.Element {
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-20 animate-fade-in">
+        <div className="text-center mb-15 animate-fade-in">
           <Badge
             variant="secondary"
             className="mb-6 text-videomule-green bg-videomule-green/10 border-videomule-green/20"
           >
             Testimonials
           </Badge>
-          <h2 className="max-w-3xl mx-auto font-bricolage text-4xl lg:text-6xl font-bold text-videomule-black mb-6">
+          <h2 className="max-w-3xl mx-auto font-bricolage text-4xl lg:text-6xl font-bold text-videomule-black mb-4">
             Trusted By 10,000+ World Class Creators
           </h2>
           <p className="text-lg text-videomule-gray max-w-[800px] mx-auto leading-relaxed">
@@ -135,7 +135,7 @@ export default function Testimonial(): React.JSX.Element {
         </div>
 
         {/* Slider */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-700 ease-in-out">
             {visibleSlides.map((t, index) => (
               <div

@@ -38,17 +38,17 @@ export default function Faq(): React.JSX.Element {
     }
   ];
   return (
-    <section className="py-24 bg-videomule-light-green relative">
-      <div className="max-w-7xl mx-auto px-4 overflow-visible">
+    <section className="py-28 bg-videomule-light-green relative">
+      <div className="max-w-5xl mx-auto px-4 overflow-visible">
         {/* Header */}
-        <div className="text-center mb-20 animate-fade-in">
+        <div className="text-center mb-15 animate-fade-in">
           <Badge
             variant="secondary"
             className="mb-6 text-videomule-green bg-videomule-green/10 border-videomule-green/20"
           >
             FAQs
           </Badge>
-          <h2 className="max-w-3xl mx-auto font-bricolage text-4xl lg:text-6xl font-bold text-videomule-black mb-6">
+          <h2 className="max-w-3xl mx-auto font-bricolage text-4xl lg:text-6xl font-bold text-videomule-black mb-4">
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-videomule-gray max-w-[800px] mx-auto leading-relaxed">

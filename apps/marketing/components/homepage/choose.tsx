@@ -19,7 +19,7 @@ export default function WhyChoose(): React.JSX.Element {
       darkBorder: 'border-[#1E3A8A]',
       heading: 'Experienced Professionals',
       description:
-        'Lorem ipsum is simply dummy text of the printing and typesetting industry.'
+        'Created by experts in AI and video editing to help you make stunning, professional-quality videos easily.'
     },
     {
       icon: Star,
@@ -32,7 +32,7 @@ export default function WhyChoose(): React.JSX.Element {
       darkBorder: 'border-[#7C2D12]',
       heading: 'Satisfaction Guarantee',
       description:
-        'Lorem ipsum is simply dummy text of the printing and typesetting industry.'
+        'We are committed to delivering excellent results so every video you create feels polished, natural, and engaging.'
     },
     {
       icon: DollarSign,
@@ -45,7 +45,7 @@ export default function WhyChoose(): React.JSX.Element {
       darkBorder: 'border-[#4C1D95]',
       heading: 'Affordable Prices',
       description:
-        'Lorem ipsum is simply dummy text of the printing and typesetting industry.'
+        'Enjoy cost-effective AI video and voiceover creation that delivers studio-level quality without expensive production costs.'
     },
     {
       icon: Shield,
@@ -58,12 +58,12 @@ export default function WhyChoose(): React.JSX.Element {
       darkBorder: 'border-[#14532D]',
       heading: 'Reliable & Trustworthy',
       description:
-        'Lorem ipsum is simply dummy text of the printing and typesetting industry.'
+        'Count on Videomule secure, AI-driven platform for consistent, high-quality video creation every single time.'
     }
   ];
 
   return (
-    <section className="py-24 bg-videomule-white relative">
+    <section className="py-28 bg-videomule-white relative">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-15 animate-fade-in">
@@ -77,9 +77,9 @@ export default function WhyChoose(): React.JSX.Element {
             Why choose us?
           </h2>
           <p className="text-lg text-videomule-gray max-w-800px mx-auto leading-relaxed">
-            Lorem ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+            Videomule combines AI scripting and realistic voiceovers to help you
+            turn basic screen recordings into professional videos. Save time,
+            reduce costs, and scale your content effortlessly.
           </p>
         </div>
 

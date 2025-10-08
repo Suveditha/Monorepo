@@ -6,7 +6,7 @@ import { Button } from '@workspace/ui/components/buttonHome';
 
 export default function Cta(): React.JSX.Element {
   return (
-    <section className="pt-32 pb-20 bg-gradient-header relative">
+    <section className="py-28 bg-gradient-header relative">
       <Image
         src="/assets/sample/homepage/cta.avif"
         alt="CTA Image"
@@ -44,7 +44,7 @@ export default function Cta(): React.JSX.Element {
               Amazing Videos?
             </span>
           </h1>
-          <p className="text-xl text-videomule-green-text mb-12 max-w-3xl mx-auto leading-[1.5em] animate-fade-in delay-300">
+          <p className="text-xl text-videomule-green-text mb-10 max-w-3xl mx-auto leading-[1.5em] animate-fade-in delay-300">
             Transform your screen recordings into professional videos with
             AI-powered voiceovers in just minutes
           </p>
@@ -53,7 +53,7 @@ export default function Cta(): React.JSX.Element {
               size="xl"
               className="border-videomule-white group bg-videomule-black text-lg px-10 py-4 hover:scale-105 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
             >
-              Start for Free
+              Start Creating for free
               <span className="ml-2 flex items-center justify-center w-8 h-8 rounded-full bg-videomule-white transition-transform duration-300 group-hover:translate-x-1">
                 <ArrowUpRight className="w-2 h-2 text-videomule-black" />
               </span>
