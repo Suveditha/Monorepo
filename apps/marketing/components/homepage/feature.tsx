@@ -70,7 +70,7 @@ export default function Feature(): React.JSX.Element {
           <h2 className="font-bricolage text-5xl lg:text-6xl font-bold text-videomule-black mb-4">
             Powerful Features
           </h2>
-          <p className="text-lg text-videomule-gray max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-videomule-gray max-w-2xl mx-auto leading-relaxed">
             Everything you need to transform your screen recordings into
             professional videos with AI voiceovers
           </p>

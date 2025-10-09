@@ -38,7 +38,10 @@ export default function Faq(): React.JSX.Element {
     }
   ];
   return (
-    <section className="py-28 bg-videomule-light-green relative">
+    <section
+      id="faq"
+      className="py-28 bg-videomule-light-green relative"
+    >
       <div className="max-w-5xl mx-auto px-4 overflow-visible">
         {/* Header */}
         <div className="text-center mb-15 animate-fade-in">

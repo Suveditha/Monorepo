@@ -31,11 +31,11 @@ export default function Hero(): React.JSX.Element {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20 animate-fade-in delay-500">
             <Button
               size="lg"
-              className="text-lg px-8 py-4 hover-scale transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
+              className="group text-lg px-8 py-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center justify-center"
             >
               Start for Free
               <span className="ml-2 flex items-center justify-center w-8 h-8 rounded-full bg-videomule-white transition-transform duration-300 group-hover:translate-x-1">
-                <ArrowUpRight className="text-videomule-black h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowUpRight className="text-videomule-black h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5" />
               </span>
             </Button>
           </div>

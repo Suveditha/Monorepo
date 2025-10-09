@@ -163,7 +163,10 @@ export default function UseCases(): React.JSX.Element {
   ];
 
   return (
-    <section className="py-28 relative">
+    <section
+      className="py-28 relative"
+      id="use-cases"
+    >
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">

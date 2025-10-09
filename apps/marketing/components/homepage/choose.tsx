@@ -63,7 +63,10 @@ export default function WhyChoose(): React.JSX.Element {
   ];
 
   return (
-    <section className="py-28 bg-videomule-white relative">
+    <section
+      className="py-28 bg-videomule-white relative"
+      id="why-choose-us"
+    >
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-15 animate-fade-in">

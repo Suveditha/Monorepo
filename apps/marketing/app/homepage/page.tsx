@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 
 import WhyChoose from '~/components/homepage/choose';
 import Cta from '~/components/homepage/cta';
@@ -10,6 +11,11 @@ import Pricing from '~/components/homepage/pricing';
 import StepProcess from '~/components/homepage/step-process';
 import Testimonial from '~/components/homepage/testimonial';
 import UseCases from '~/components/homepage/usecases';
+import { createTitle } from '~/lib/formatters';
+
+export const metadata: Metadata = {
+  title: createTitle('Homepage')
+};
 
 export default function HomePage(): React.JSX.Element {
   return (

@@ -82,6 +82,7 @@ export const routes = {
     }
   },
   marketing: {
+    Homepage: `${baseUrl.Marketing}/homepage`,
     Api: `${baseUrl.Marketing}/api`,
     Blog: `${baseUrl.Marketing}/blog`,
     Careers: `${baseUrl.Marketing}/careers`,

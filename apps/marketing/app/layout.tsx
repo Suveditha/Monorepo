@@ -10,7 +10,7 @@ import { Toaster } from '@workspace/ui/components/sonner';
 
 import { Footer } from '~/components/footer';
 import { CookieBanner } from '~/components/fragments/cookie-banner';
-import { Navbar } from '~/components/navbar';
+import { Navbar } from '~/components/navbar-new';
 import { Providers } from './providers';
 
 export const viewport: Viewport = {

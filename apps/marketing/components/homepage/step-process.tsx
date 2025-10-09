@@ -21,7 +21,7 @@ export default function StepProcess(): React.JSX.Element {
     {
       number: 1,
       logo: Upload,
-      color: 'bg-blue-500',
+      color: 'bg-videomule-green',
       heading: 'Upload Your Video',
       description:
         'Simply drag and drop your screen recording into VideoMule. We support all major video formats and process them instantly in the cloud.',
@@ -36,13 +36,13 @@ export default function StepProcess(): React.JSX.Element {
           {/* Upload Area */}
           <div
             className="
-    border-2 border-dashed border-blue-300 dark:border-blue-700 
+    border-2 border-dashed border-videomule-green 
     rounded-xl p-12 text-center 
-    bg-blue-50 hover:bg-blue-100 dark:bg-blue-950 dark:hover:bg-blue-900 
+    bg-videomule-light-green 
     transition-colors cursor-pointer
   "
           >
-            <Upload className="w-12 h-12 text-blue-500 dark:text-blue-400 mx-auto mb-4" />
+            <Upload className="w-12 h-12 text-videomule-green mx-auto mb-4" />
             <h4 className="font-semibold text-videomule-black dark:text-white mb-2">
               Drop your video here
             </h4>
@@ -73,7 +73,7 @@ export default function StepProcess(): React.JSX.Element {
             rounded-lg transition-colors
           "
                   >
-                    <Video className="w-4 h-4 text-blue-500 dark:text-blue-400 mr-3" />
+                    <Video className="w-4 h-4 text-videomule-green mr-3" />
                     <span className="text-sm text-videomule-black dark:text-white flex-1">
                       {name}
                     </span>
@@ -92,7 +92,7 @@ export default function StepProcess(): React.JSX.Element {
       number: 2,
       order: 'lg:order-1',
       logo: FileText,
-      color: 'bg-purple-500',
+      color: 'bg-videomule-green',
       heading: 'Get a perfect script',
       description:
         'Our advanced AI analyzes your video content and creates a natural, professional script that matches your recording perfectly.',
@@ -109,8 +109,8 @@ export default function StepProcess(): React.JSX.Element {
             <h4 className="font-semibold text-videomule-black dark:text-white">
               Generated Script
             </h4>
-            <div className="flex items-center text-sm text-purple-500 dark:text-purple-400">
-              <div className="w-2 h-2 bg-purple-500 dark:bg-purple-400 rounded-full mr-2 animate-pulse"></div>
+            <div className="flex items-center text-sm text-videomule-green">
+              <div className="w-2 h-2 bg-videomule-green rounded-full mr-2 animate-pulse"></div>
               AI Writing...
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function StepProcess(): React.JSX.Element {
                 First, let's explore the dashboard where you can manage all your
                 projects. As you can see, the interface is clean and
                 intuitive...
-                <span className="inline-block w-2 h-4 bg-purple-500 dark:bg-purple-400 ml-1 animate-pulse"></span>
+                <span className="inline-block w-2 h-4 bg-videomule-green ml-1 animate-pulse"></span>
               </p>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function StepProcess(): React.JSX.Element {
     {
       number: 3,
       logo: Mic,
-      color: 'bg-orange-500',
+      color: 'bg-videomule-green',
       heading: 'Choose Your Voice',
       description:
         'Select from over 100 professional AI voices in multiple languages and accents. Preview each voice to find the perfect match for your content.',
@@ -196,8 +196,8 @@ export default function StepProcess(): React.JSX.Element {
                 className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all 
           ${
             voice.active
-              ? 'bg-orange-50 border-orange-300 dark:bg-orange-500/10 dark:border-orange-400/40'
-              : 'bg-gray-50 border-gray-200 hover:border-orange-200 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-orange-400/40'
+              ? 'bg-videomule-light-green border-videomule-green'
+              : 'bg-gray-50 border-gray-200 hover:border-videomule-green dark:bg-gray-800 dark:border-gray-700 dark:hover:border-orange-400/40'
           }`}
               >
                 <div className="flex items-center">
@@ -205,7 +205,7 @@ export default function StepProcess(): React.JSX.Element {
                     className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-semibold mr-4 
               ${
                 voice.active
-                  ? 'bg-orange-500 dark:bg-orange-400'
+                  ? 'bg-videomule-green'
                   : 'bg-gray-400 dark:bg-gray-600'
               }`}
                   >
@@ -225,7 +225,7 @@ export default function StepProcess(): React.JSX.Element {
                 <Play
                   className={`w-5 h-5 ${
                     voice.active
-                      ? 'text-orange-500 dark:text-orange-400'
+                      ? 'text-videomule-green'
                       : 'text-gray-400 dark:text-gray-500'
                   }`}
                 />
@@ -234,20 +234,18 @@ export default function StepProcess(): React.JSX.Element {
           </div>
 
           {/* Audio Waveform */}
-          <div className="bg-orange-50 dark:bg-orange-500/10 rounded-xl p-4">
+          <div className="bg-videomule-light-green rounded-xl p-4">
             <div className="flex items-center justify-between mb-3">
               <span className="text-sm font-semibold text-videomule-black dark:text-white">
                 Preview: Sarah
               </span>
-              <span className="text-sm text-orange-500 dark:text-orange-400">
-                0:08 / 0:15
-              </span>
+              <span className="text-sm text-videomule-green">0:08 / 0:15</span>
             </div>
             <div className="flex items-center space-x-1">
               {Array.from({ length: 24 }).map((_, i) => (
                 <div
                   key={i}
-                  className="bg-orange-400 dark:bg-orange-300 rounded-sm"
+                  className="bg-videomule-green rounded-sm"
                   style={{
                     width: '2px',
                     height: `${8 + Math.random() * 16}px`
