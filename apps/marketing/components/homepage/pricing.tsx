@@ -14,7 +14,7 @@ export default function Pricing(): React.JSX.Element {
       pricePill: '',
       priceColor: '',
       details: [
-        '1 Video upload per org - max 3 mins video file',
+        '1 Video upload',
         'Unlimited Users',
         'Storage: 100 MB',
         'Renders with watermark'

@@ -195,6 +195,7 @@ export default function UseCases(): React.JSX.Element {
           ))}
         </div>
       </div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
     </section>
   );
 }

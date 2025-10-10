@@ -10,7 +10,7 @@ import { Badge } from './components/badge';
 
 export default function Hero(): React.JSX.Element {
   return (
-    <section className="pt-35 pb-28 bg-gradient-header relative">
+    <section className="pt-15 pb-28 bg-gradient-header relative">
       <div className="max-w-7xl mx-auto px-4 text-center tracking-tight">
         <div className="animate-fade-in">
           <Badge

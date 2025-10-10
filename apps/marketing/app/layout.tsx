@@ -8,7 +8,7 @@ import { APP_DESCRIPTION, APP_NAME } from '@workspace/common/app';
 import { baseUrl } from '@workspace/routes';
 import { Toaster } from '@workspace/ui/components/sonner';
 
-import { Footer } from '~/components/footer';
+import { Footer } from '~/components/footer-home';
 import { CookieBanner } from '~/components/fragments/cookie-banner';
 import { Navbar } from '~/components/navbar-new';
 import { Providers } from './providers';

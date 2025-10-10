@@ -281,7 +281,7 @@ export default function StepProcess(): React.JSX.Element {
           <div className="bg-gray-900 dark:bg-videomule-gray/20 rounded-xl p-4 mb-6">
             <div className="aspect-video bg-gray-800 dark:bg-videomule-gray/40 rounded-lg flex items-center justify-center relative">
               <Image
-                className="absolute w-full h-full rounded-lg object-cover"
+                className="aspect-video absolute rounded-lg object-cover"
                 src="/assets/sample/homepage/videoBG.avif"
                 alt="Get final Edited video with VoiceOver Synced to Visuals"
                 width={504}

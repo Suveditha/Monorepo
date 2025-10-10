@@ -87,7 +87,7 @@ export default function Testimonial(): React.JSX.Element {
   const visibleSlides = getVisibleSlides();
 
   return (
-    <section className="py-28 bg-videomule-gray/5 relative overflow-hidden">
+    <section className="py-28 bg-videomule-gray/3 relative overflow-hidden">
       {/* Background stars */}
       <div className="absolute top-12 left-12 text-videomule-black/10">
         <Star

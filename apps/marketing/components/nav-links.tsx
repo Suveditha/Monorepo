@@ -53,48 +53,28 @@ export const FOOTER_LINKS = [
   {
     title: 'Product',
     links: [
-      { name: 'Feature 1', href: '#', external: false },
-      { name: 'Feature 2', href: '#', external: false },
-      { name: 'Feature 3', href: '#', external: false },
-      { name: 'Feature 4', href: '#', external: false },
-      { name: 'Feature 5', href: '#', external: false }
+      { name: 'Features', href: '#', external: false },
+      { name: 'Pricing', href: '#', external: false },
+      { name: 'API', href: '#', external: false },
+      { name: 'Integrations', href: '#', external: false }
     ]
   },
   {
     title: 'Resources',
     links: [
-      { name: 'Contact', href: routes.marketing.Contact, external: false },
-      { name: 'Roadmap', href: routes.marketing.Roadmap, external: true },
-      { name: 'Docs', href: routes.marketing.Docs, external: false },
-      { name: 'API Reference', href: baseUrl.PublicApi, external: true }
+      { name: 'Blog', href: routes.marketing.Contact, external: false },
+      { name: 'Help Center', href: routes.marketing.Roadmap, external: true },
+      { name: 'Tutorials', href: routes.marketing.Docs, external: false },
+      { name: 'Community', href: baseUrl.PublicApi, external: true }
     ]
   },
   {
-    title: 'About',
+    title: 'Company',
     links: [
-      { name: 'Story', href: routes.marketing.Story, external: false },
-      { name: 'Blog', href: routes.marketing.Blog, external: false },
-      { name: 'Careers', href: routes.marketing.Careers, external: false }
-    ]
-  },
-  {
-    title: 'Legal',
-    links: [
-      {
-        name: 'Terms of Use',
-        href: routes.marketing.TermsOfUse,
-        external: false
-      },
-      {
-        name: 'Privacy Policy',
-        href: routes.marketing.PrivacyPolicy,
-        external: false
-      },
-      {
-        name: 'Cookie Policy',
-        href: routes.marketing.CookiePolicy,
-        external: false
-      }
+      { name: 'About', href: routes.marketing.Story, external: false },
+      { name: 'Careers', href: routes.marketing.Blog, external: false },
+      { name: 'Privacy', href: routes.marketing.Careers, external: false },
+      { name: 'Terms', href: routes.marketing.Careers, external: false }
     ]
   }
 ];

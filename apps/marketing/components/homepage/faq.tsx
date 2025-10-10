@@ -5,7 +5,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger
-} from '@workspace/ui/components/accordion';
+} from '@workspace/ui/components/accordian';
 
 import { Badge } from './components/badge';
 
@@ -40,7 +40,7 @@ export default function Faq(): React.JSX.Element {
   return (
     <section
       id="faq"
-      className="py-28 bg-videomule-light-green relative"
+      className="py-28 relative"
     >
       <div className="max-w-5xl mx-auto px-4 overflow-visible">
         {/* Header */}
