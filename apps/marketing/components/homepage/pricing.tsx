@@ -61,7 +61,7 @@ export default function Pricing(): React.JSX.Element {
           >
             Pricing
           </Badge>
-          <h2 className="font-bricolage text-5xl lg:text-6xl font-bold text-videomule-black mb-4">
+          <h2 className="max-w-3xl mx-auto font-bricolage text-4xl lg:text-6xl font-bold text-videomule-black mb-4">
             Pricing Plans
           </h2>
           <p className="text-lg text-videomule-gray max-w-3xl mx-auto leading-relaxed">

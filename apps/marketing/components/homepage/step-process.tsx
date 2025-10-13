@@ -344,7 +344,7 @@ export default function StepProcess(): React.JSX.Element {
           >
             Simple 4-Step Process
           </Badge>
-          <h2 className="font-bricolage text-5xl lg:text-6xl font-bold text-videomule-black mb-4 animate-fade-in delay-200">
+          <h2 className="max-w-3xl mx-auto font-bricolage text-4xl lg:text-6xl font-bold text-videomule-black mb-4 animate-fade-in delay-200">
             How VideoMule Works
           </h2>
           <p className="text-lg text-videomule-green-text max-w-3xl mx-auto leading-relaxed tracking-[-0.01em] animate-fade-in delay-300">
@@ -368,7 +368,7 @@ export default function StepProcess(): React.JSX.Element {
                   <div
                     className={cn(
                       step.color,
-                      'w-12 h-12 p-3 rounded-xl flex items-center justify-center text-white mr-4 hover-scale transition-all duration-300 animate-pulse'
+                      'w-12 h-12 p-3 rounded-xl flex items-center justify-center text-white mr-4'
                     )}
                   >
                     <step.logo className="w-6 h-6" />

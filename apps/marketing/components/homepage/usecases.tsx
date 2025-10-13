@@ -17,79 +17,47 @@ type UseCaseType = {
 function UseCaseCard({ useCase }: { useCase: UseCaseType }) {
   const videoRef = React.useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = React.useState(false);
-  const [showPlayButton, setShowPlayButton] = React.useState(false);
 
-  // ▶️ Play video with audio on hover
-  const handleMouseEnter = async () => {
-    if (videoRef.current) {
-      try {
-        videoRef.current.currentTime = 0;
-        videoRef.current.muted = false;
-        videoRef.current.controls = true;
-        await videoRef.current.play();
-        setIsPlaying(true);
-        setShowPlayButton(false);
-      } catch (err) {
-        console.warn('Autoplay with audio blocked by browser:', err);
-        setShowPlayButton(true);
-      }
-    }
-  };
-
-  // ⏸ Stop and reset on hover out
-  const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-      videoRef.current.controls = false;
-      setIsPlaying(false);
-      setShowPlayButton(false);
-    }
-  };
-
-  // ▶️ Resume manually when custom play button clicked
+  // ▶️ Handle play button click
   const handlePlayClick = async () => {
-    if (videoRef.current) {
-      try {
-        videoRef.current.muted = false;
-        videoRef.current.controls = true;
-        await videoRef.current.play();
-        setIsPlaying(true);
-        setShowPlayButton(false);
-      } catch (err) {
-        console.error('Play failed:', err);
-      }
+    const video = videoRef.current;
+    if (!video) return;
+
+    try {
+      video.muted = false;
+      video.controls = true;
+      await video.play();
+      setIsPlaying(true);
+    } catch (err) {
+      console.error('Play failed:', err);
     }
   };
 
-  // 🎬 Show play button when video ends
-  const handleVideoEnd = () => {
-    setIsPlaying(false);
-    setShowPlayButton(true);
-  };
+  // ⏸ Handle pause (from controls)
+  const handlePause = () => {
+    const video = videoRef.current;
+    if (!video) return;
 
-  // 🟡 NEW — Show play button when video is paused
-  const handleVideoPause = () => {
-    // If pause wasn't triggered by hover-out
-    if (
-      videoRef.current &&
-      videoRef.current.currentTime > 0 &&
-      !videoRef.current.ended
-    ) {
+    if (video.paused) {
+      video.controls = false;
       setIsPlaying(false);
-      setShowPlayButton(true);
     }
+  };
+
+  // 🎬 Handle video end
+  const handleEnded = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.controls = false;
+    video.currentTime = 0;
+    setIsPlaying(false);
   };
 
   return (
-    <Card
-      className="group bg-videomule-white hover:shadow-[0_5px_20px_0_#66B60C26] transition-all duration-300 border border-videomule-gray/20 hover:border-videomule-green"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <Card className="group bg-videomule-white hover:shadow-[0_5px_20px_0_#66B60C26] transition-all duration-300 border border-videomule-gray/20 hover:border-videomule-green">
       <CardContent className="p-7">
         <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-6 relative overflow-hidden">
-          {/* Image when not playing */}
+          {/* 🖼️ Show image when not playing */}
           {!isPlaying && (
             <Image
               className="w-full h-full object-cover"
@@ -100,32 +68,31 @@ function UseCaseCard({ useCase }: { useCase: UseCaseType }) {
             />
           )}
 
-          {/* Video */}
+          {/* 🎥 Video */}
           <video
             ref={videoRef}
             src={useCase.video}
-            className={`w-full h-full object-cover ${
-              isPlaying ? 'block' : 'hidden'
-            }`}
-            loop
+            className={`w-full h-full object-cover ${isPlaying ? 'block' : 'hidden'}`}
             playsInline
-            onEnded={handleVideoEnd}
-            onPause={handleVideoPause} // 👈 Detect manual pause
+            preload="metadata"
+            onPause={handlePause}
+            onEnded={handleEnded}
           />
 
-          {/* Custom play button (manual resume or autoplay blocked) */}
-          {showPlayButton && (
+          {/* ▶️ Custom play button */}
+          {!isPlaying && (
             <button
               onClick={handlePlayClick}
-              className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm transition-opacity"
+              className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity"
             >
-              <span className="w-16 h-16 bg-videomule-white rounded-full flex items-center justify-center hover:scale-105 transition-transform">
+              <span className="w-16 h-16 bg-videomule-white rounded-full flex items-center justify-center hover:scale-105 transition-transform shadow-md">
                 <Play className="w-8 h-8 text-videomule-green" />
               </span>
             </button>
           )}
         </div>
 
+        {/* 🧠 Text content */}
         <h3 className="font-bricolage text-2xl font-bold text-videomule-black mb-3 group-hover:text-videomule-green transition-colors">
           {useCase.heading}
         </h3>
@@ -195,6 +162,8 @@ export default function UseCases(): React.JSX.Element {
           ))}
         </div>
       </div>
+
+      {/* Section separator */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
     </section>
   );

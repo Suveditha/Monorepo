@@ -67,7 +67,7 @@ export default function Feature(): React.JSX.Element {
           >
             Key Features
           </Badge>
-          <h2 className="font-bricolage text-5xl lg:text-6xl font-bold text-videomule-black mb-4">
+          <h2 className="max-w-3xl mx-auto font-bricolage text-4xl lg:text-6xl font-bold text-videomule-black mb-4">
             Powerful Features
           </h2>
           <p className="text-lg text-videomule-gray max-w-2xl mx-auto leading-relaxed">
