@@ -72,7 +72,7 @@ export function CookieBanner(): React.JSX.Element {
               <Button
                 type="button"
                 variant="default"
-                className="w-1/2"
+                className="w-1/2 bg-videomule-green"
                 onClick={handleAcceptCookies}
               >
                 Accept

@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import Image from 'next/image';
 import {
@@ -11,12 +13,39 @@ import {
   Video
 } from 'lucide-react';
 
-import { Button } from '@workspace/ui/components/buttonHome';
+//import { Button } from '@workspace/ui/components/buttonHome';
 import { cn } from '@workspace/ui/lib/utils';
 
 import { Badge } from './components/badge';
 
 export default function StepProcess(): React.JSX.Element {
+  const [isPlaying, setIsPlaying] = React.useState(false);
+  const videoRef = React.useRef<HTMLVideoElement | null>(null);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      videoRef.current.controls = true;
+      setIsPlaying(true);
+    }
+  };
+
+  const handlePause = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.controls = false;
+      setIsPlaying(false);
+    }
+  };
+
+  const handleEnded = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.controls = false;
+      setIsPlaying(false);
+    }
+  };
+
   const step = [
     {
       number: 1,
@@ -39,7 +68,7 @@ export default function StepProcess(): React.JSX.Element {
     border-2 border-dashed border-videomule-green 
     rounded-xl p-12 text-center 
     bg-videomule-light-green 
-    transition-colors cursor-pointer
+    transition-colors flex flex-col justify-center items-center
   "
           >
             <Upload className="w-12 h-12 text-videomule-green mx-auto mb-4" />
@@ -49,12 +78,9 @@ export default function StepProcess(): React.JSX.Element {
             <p className="text-videomule-gray dark:text-gray-400 text-sm mb-4">
               or click to browse files
             </p>
-            <Button
-              variant="outline"
-              size="sm"
-            >
+            <div className="text-sm px-4 py-3 rounded-full border-2 border-videomule-green bg-transparent text-videomule-green shadow-button">
               Select File
-            </Button>
+            </div>
           </div>
 
           {/* Recent Uploads */}
@@ -134,19 +160,13 @@ export default function StepProcess(): React.JSX.Element {
 
           {/* Action Buttons */}
           <div className="flex space-x-3">
-            <Button
-              variant="outline"
-              className="flex-1 border border-videomule-gray text-videomule-gray dark:border-gray-600 dark:text-gray-300"
-            >
+            <div className="px-10 py-3 rounded-full bg-transparent shadow-button flex items-center justify-center flex-1 border border-videomule-gray text-videomule-gray dark:border-gray-600 dark:text-gray-300">
               <Edit className="w-4 h-4 mr-2" />
               Edit Script
-            </Button>
-            <Button
-              variant="outline"
-              className="flex-1 rounded-full dark:bg-videomule-green dark:text-white dark:hover:bg-green-500"
-            >
+            </div>
+            <div className="flex items-center justify-center px-10 py-3 border-2 border-videomule-green bg-transparent text-videomule-green shadow-button flex-1 rounded-full dark:bg-videomule-green dark:text-white dark:hover:bg-green-500">
               Continue
-            </Button>
+            </div>
           </div>
         </div>
       )
@@ -242,16 +262,22 @@ export default function StepProcess(): React.JSX.Element {
               <span className="text-sm text-videomule-green">0:08 / 0:15</span>
             </div>
             <div className="flex items-center space-x-1">
-              {Array.from({ length: 24 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="bg-videomule-green rounded-sm"
-                  style={{
-                    width: '2px',
-                    height: `${8 + Math.random() * 16}px`
-                  }}
-                ></div>
-              ))}
+              {Array.from({ length: 24 }).map((_, i) => {
+                const heights = [
+                  12, 18, 10, 20, 15, 8, 22, 14, 18, 16, 12, 19, 17, 13, 21, 9,
+                  23, 15, 20, 11, 17, 14, 19, 10
+                ];
+                return (
+                  <div
+                    key={i}
+                    className="bg-videomule-green rounded-sm"
+                    style={{
+                      width: '2px',
+                      height: `${heights[i % heights.length]}px`
+                    }}
+                  ></div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -273,60 +299,70 @@ export default function StepProcess(): React.JSX.Element {
       browserheading: 'videomule.com/export',
       htmlCode: (
         <div className="p-8">
-          <h4 className="font-semibold text-videomule-black mb-6">
-            Ready to Export
-          </h4>
-
-          {/* Video Preview */}
-          <div className="bg-gray-900 dark:bg-videomule-gray/20 rounded-xl p-4 mb-6">
-            <div className="aspect-video bg-gray-800 dark:bg-videomule-gray/40 rounded-lg flex items-center justify-center relative">
-              <Image
-                className="aspect-video absolute rounded-lg object-cover"
-                src="/assets/sample/homepage/videoBG.avif"
-                alt="Get final Edited video with VoiceOver Synced to Visuals"
-                width={504}
-                height={236}
+          {/* ✅ Updated Custom Playable Video */}
+          <div className="bg-gray-900 dark:bg-videomule-gray/20 rounded-xl p-4 mb-5">
+            <div className="aspect-video bg-gray-800 dark:bg-videomule-gray/40 rounded-lg flex items-center justify-center relative overflow-hidden">
+              <video
+                ref={videoRef}
+                src="https://gw-ai-social-media.b-cdn.net/VideoMule/audio.mp4"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+                  isPlaying ? 'opacity-100' : 'opacity-0'
+                }`}
+                onPause={handlePause}
+                onEnded={handleEnded}
+                playsInline
               />
 
-              {/* Play button */}
-              <Play className="z-[1] w-12 h-12 p-3 bg-white text-videomule-green rounded-4xl" />
+              {!isPlaying && (
+                <Image
+                  className="absolute inset-0 w-full h-full object-cover rounded-lg transition-opacity duration-500"
+                  src="/assets/sample/homepage/videoBG.avif"
+                  alt="Final video with AI voiceover"
+                  width={504}
+                  height={236}
+                />
+              )}
 
-              {/* Tag */}
-              <div className="z-[1] absolute bottom-2 left-2 bg-videomule-green text-white text-xs px-2 py-1 rounded">
+              {!isPlaying && (
+                <button
+                  onClick={handlePlay}
+                  className="z-[2] flex items-center justify-center"
+                >
+                  <span className="w-16 h-16 bg-white text-videomule-green rounded-full flex items-center justify-center shadow-md hover:scale-105 transition-transform">
+                    <Play className="w-8 h-8" />
+                  </span>
+                </button>
+              )}
+
+              <div className="z-[2] absolute bottom-2 left-2 bg-videomule-green text-white text-xs px-2 py-1 rounded">
                 With AI Voice
               </div>
+
+              <div className="absolute inset-0 bg-black/10 rounded-lg pointer-events-none" />
             </div>
 
             <div className="flex items-center justify-between mt-3">
-              <span className="text-white dark:text-gray-300 text-sm">
-                tutorial-final.mp4
-              </span>
-              <span className="text-white dark:text-gray-300 text-sm">
-                2:45
-              </span>
+              <span className="text-white text-sm">tutorial-final.mp4</span>
+              <span className="text-white text-sm">2:45</span>
             </div>
           </div>
 
           {/* Export Options */}
-          <div className="space-y-3 mb-6">
-            <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-videomule-gray/20 rounded-lg">
+          <div className="flex gap-3 mb-3 text-sm">
+            <div className="flex flex-1 items-center justify-between px-4 py-1.5 bg-gray-50 rounded-lg">
               <span className="text-videomule-black font-medium">Quality</span>
-              <span className="text-videomule-gray dark:text-gray-300">
-                1080p HD
-              </span>
+              <span className="text-videomule-gray">1080p HD</span>
             </div>
-            <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-videomule-gray/20 rounded-lg">
+            <div className="flex flex-1 items-center justify-between px-4 py-1.5 bg-gray-50 rounded-lg">
               <span className="text-videomule-black font-medium">Format</span>
-              <span className="text-videomule-gray dark:text-gray-300">
-                MP4
-              </span>
+              <span className="text-videomule-gray">MP4</span>
             </div>
           </div>
 
-          <Button className="w-full bg-videomule-green hover:bg-videomule-green/90 dark:bg-videomule-green/80 dark:hover:bg-videomule-green rounded-full">
+          <div className="w-full flex py-3 px-6 gap-4 justify-center items-center text-white bg-videomule-green rounded-full">
             <Download className="w-4 h-4 mr-2" />
             Export Video
-          </Button>
+          </div>
         </div>
       )
     }

@@ -5,6 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@workspace/ui/components/buttonHome';
 
 import { Badge } from './components/badge';
+import HeroTabs from './components/tabs';
 
 //import Link from 'next/link';
 
@@ -63,6 +64,7 @@ export default function Hero(): React.JSX.Element {
           <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent pointer-events-none rounded-2xl"></div>
         </div>
       </div>
+      <HeroTabs />
       {/* Section separator */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
     </section>

@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Check, Play, X } from 'lucide-react';
+import { Check, Play, VolumeOff, X } from 'lucide-react';
 
 import { cn } from '@workspace/ui/lib/utils';
 
@@ -72,15 +72,15 @@ export default function Difference(): React.JSX.Element {
       title: 'Silent Screen Recording',
       points: [
         {
+          heading: 'No Audio',
+          description: "Your input video doesn't need to have any audio"
+        },
+        {
           heading: 'Low Engagement',
           description: 'Viewers lose interest without audio guidance'
         },
         {
-          heading: 'Confusing Content',
-          description: 'Hard to understand complex processes'
-        },
-        {
-          heading: 'Time Consuming',
+          heading: 'Manual Script & Voiceover takes time',
           description: 'Expensive voice talent and studio time'
         }
       ]
@@ -93,16 +93,16 @@ export default function Difference(): React.JSX.Element {
       title: 'Professional AI Voiceover',
       points: [
         {
-          heading: '3x Higher Engagement',
-          description: 'Professional narration keeps viewers watching'
-        },
-        {
-          heading: 'Crystal Clear Explanation',
+          heading: 'Automatic Audio + Sync',
           description: 'AI script perfectly explains every step'
         },
         {
+          heading: '5x Higher Engagement',
+          description: 'Professional narration keeps viewers watching'
+        },
+        {
           heading: 'Ready in Minutes',
-          description: 'Fast AI processing, instant results'
+          description: 'AI prepares your output in minutes'
         }
       ]
     }
@@ -240,6 +240,13 @@ export default function Difference(): React.JSX.Element {
                           ></div>
                         </div>
                       </div>
+                    )}
+                    {index === 0 ? (
+                      <div className="absolute top-4 left-4 bg-black rounded-full p-2">
+                        <VolumeOff className="w-4 h-4 text-white font-bold" />
+                      </div>
+                    ) : (
+                      ''
                     )}
                   </div>
                 </div>
