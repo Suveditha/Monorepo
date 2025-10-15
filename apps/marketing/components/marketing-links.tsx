@@ -2,14 +2,22 @@ import * as React from 'react';
 import {
   BookIcon,
   BookOpenIcon,
+  Bot,
   BoxIcon,
   CircuitBoardIcon,
   CodeIcon,
   CuboidIcon,
   FileBarChartIcon,
+  FileText,
+  FolderSync,
   LayoutIcon,
+  Mic,
+  MicVocal,
   PlayIcon,
-  SendHorizonalIcon
+  SendHorizonalIcon,
+  User,
+  UserPen,
+  Volume2
 } from 'lucide-react';
 
 import { baseUrl, routes } from '@workspace/routes';
@@ -26,37 +34,44 @@ export const MENU_LINKS = [
     title: 'Product',
     items: [
       {
-        title: 'Feature 1',
+        title: 'Script writing',
         description: 'Short description here',
-        icon: <BoxIcon className="size-5 shrink-0" />,
+        icon: <FileText className="size-5 shrink-0" />,
+        href: `${routes.marketing.Index}#script-writing`,
+        external: false
+      },
+      {
+        title: 'AI Voice Over',
+        description: 'AI Voice Over',
+        icon: <MicVocal className="size-5 shrink-0" />,
+        href: `${routes.marketing.Index}#ai-voice-over`,
+        external: false
+      },
+      {
+        title: 'Auto Sync',
+        description: 'Short description here',
+        icon: <FolderSync className="size-5 shrink-0" />,
+        href: `${routes.marketing.Index}#auto-sync`,
+        external: false
+      },
+      {
+        title: 'Edit yourself',
+        description: 'Short description here',
+        icon: <UserPen className="size-5 shrink-0" />,
+        href: `${routes.marketing.Index}#features`,
+        external: false
+      },
+      {
+        title: 'Use your own voice (Coming Soon)',
+        description: 'Short description here',
+        icon: <Volume2 className="size-5 shrink-0" />,
         href: '#',
         external: false
       },
       {
-        title: 'Feature 2',
+        title: 'AI Avatar (Coming Soon)',
         description: 'Short description here',
-        icon: <PlayIcon className="size-5 shrink-0" />,
-        href: '#',
-        external: false
-      },
-      {
-        title: 'Feature 3',
-        description: 'Short description here',
-        icon: <CircuitBoardIcon className="size-5 shrink-0" />,
-        href: '#',
-        external: false
-      },
-      {
-        title: 'Feature 4',
-        description: 'Short description here',
-        icon: <LayoutIcon className="size-5 shrink-0" />,
-        href: '#',
-        external: false
-      },
-      {
-        title: 'Feature 5',
-        description: 'Short description here',
-        icon: <FileBarChartIcon className="size-5 shrink-0" />,
+        icon: <Bot className="size-5 shrink-0" />,
         href: '#',
         external: false
       }
@@ -72,32 +87,32 @@ export const MENU_LINKS = [
         href: routes.marketing.Contact,
         external: false
       },
-      {
-        title: 'Roadmap',
-        description: 'See what is coming next',
-        icon: <LayoutIcon className="size-5 shrink-0" />,
-        href: routes.marketing.Roadmap,
-        external: true
-      },
+      // {
+      //   title: 'Roadmap',
+      //   description: 'See what is coming next',
+      //   icon: <LayoutIcon className="size-5 shrink-0" />,
+      //   href: routes.marketing.Roadmap,
+      //   external: true
+      // },
       {
         title: 'Docs',
         description: 'Learn how to use our platform',
         icon: <BookOpenIcon className="size-5 shrink-0" />,
         href: routes.marketing.Docs,
         external: false
-      },
-      {
-        title: 'API Reference',
-        description: 'Build integrations with our API',
-        icon: <CodeIcon className="size-5 shrink-0" />,
-        href: baseUrl.PublicApi,
-        external: true
       }
+      // {
+      //   title: 'API Reference',
+      //   description: 'Build integrations with our API',
+      //   icon: <CodeIcon className="size-5 shrink-0" />,
+      //   href: baseUrl.PublicApi,
+      //   external: true
+      // }
     ]
   },
   {
     title: 'Pricing',
-    href: routes.marketing.Pricing,
+    href: `${routes.marketing.Index}#pricing`,
     external: false
   },
   {
@@ -116,25 +131,55 @@ export const FOOTER_LINKS = [
   {
     title: 'Product',
     links: [
-      { name: 'Feature 1', href: '#', external: false },
-      { name: 'Feature 2', href: '#', external: false },
-      { name: 'Feature 3', href: '#', external: false },
-      { name: 'Feature 4', href: '#', external: false },
-      { name: 'Feature 5', href: '#', external: false }
+      {
+        name: 'Script writing',
+        href: `${routes.marketing.Index}#script-writing`,
+        external: false
+      },
+      {
+        name: 'AI Voice Over',
+        href: `${routes.marketing.Index}#ai-voice-over`,
+        external: false
+      },
+      {
+        name: 'Auto Sync',
+        href: `${routes.marketing.Index}#auto-sync`,
+        external: false
+      },
+      {
+        name: 'Edit yourself',
+        href: `${routes.marketing.Index}#features`,
+        external: false
+      },
+      {
+        name: 'Use your own voice (Coming Soon)',
+        href: '#',
+        external: false
+      },
+      {
+        name: 'AI Avatar (Coming Soon)',
+        href: '#',
+        external: false
+      }
     ]
   },
   {
     title: 'Resources',
     links: [
       { name: 'Contact', href: routes.marketing.Contact, external: false },
-      { name: 'Roadmap', href: routes.marketing.Roadmap, external: true },
-      { name: 'Docs', href: routes.marketing.Docs, external: false },
-      { name: 'API Reference', href: baseUrl.PublicApi, external: true }
+      //{ name: 'Roadmap', href: routes.marketing.Roadmap, external: true },
+      { name: 'Docs', href: routes.marketing.Docs, external: false }
+      //{ name: 'API Reference', href: baseUrl.PublicApi, external: true }
     ]
   },
   {
     title: 'About',
     links: [
+      {
+        name: 'Pricing',
+        href: `${routes.marketing.Index}#pricing`,
+        external: false
+      },
       { name: 'Story', href: routes.marketing.Story, external: false },
       { name: 'Blog', href: routes.marketing.Blog, external: false },
       { name: 'Careers', href: routes.marketing.Careers, external: false }

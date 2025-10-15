@@ -4,7 +4,7 @@ import * as React from 'react';
 import Link from 'next/link';
 
 import { APP_NAME } from '@workspace/common/app';
-import { Button } from '@workspace/ui/components/button';
+import { Button } from '@workspace/ui/components/buttonHome';
 import { Input } from '@workspace/ui/components/input';
 import { Logo } from '@workspace/ui/components/logo';
 import { Separator } from '@workspace/ui/components/separator';
@@ -74,6 +74,9 @@ export function Footer(): React.JSX.Element {
               <div className="mt-3 sm:ml-4 sm:mt-0 sm:shrink-0">
                 <Button
                   type="button"
+                  variant="default"
+                  size="sm"
+                  className="rounded-md !shadow-none"
                   onClick={handleSubscribe}
                 >
                   Subscribe

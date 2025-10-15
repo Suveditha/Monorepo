@@ -48,7 +48,7 @@ export default function StepProcess(): React.JSX.Element {
 
   const step = [
     {
-      number: 1,
+      Id: 'upload-video',
       logo: Upload,
       color: 'bg-videomule-green',
       heading: 'Upload Your Video',
@@ -115,7 +115,7 @@ export default function StepProcess(): React.JSX.Element {
       )
     },
     {
-      number: 2,
+      Id: 'script-writing',
       order: 'lg:order-1',
       logo: FileText,
       color: 'bg-videomule-green',
@@ -172,7 +172,7 @@ export default function StepProcess(): React.JSX.Element {
       )
     },
     {
-      number: 3,
+      Id: 'ai-voice-over',
       logo: Mic,
       color: 'bg-videomule-green',
       heading: 'Choose Your Voice',
@@ -284,7 +284,7 @@ export default function StepProcess(): React.JSX.Element {
       )
     },
     {
-      number: 4,
+      Id: 'auto-sync',
       order: 'lg:order-1',
       logo: Download,
       color: 'bg-videomule-green',
@@ -391,8 +391,9 @@ export default function StepProcess(): React.JSX.Element {
         <div className="space-y-20">
           {step.map((step, i) => (
             <div
-              key={step.number}
-              className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in"
+              key={i}
+              id={step.Id}
+              className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in scroll-mt-40"
             >
               <div
                 className={cn(
