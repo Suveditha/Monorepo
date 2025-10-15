@@ -15,25 +15,61 @@ export default function HeroTabs(): React.JSX.Element {
   ];
   const [tabIndex, setTabIndex] = React.useState(0);
   const [isPaused, setIsPaused] = React.useState(false);
-  const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [pill, setPill] = React.useState<{ left: number; width: number }>({
+    left: 0,
+    width: 0
+  });
+
+  const headerRef = React.useRef<HTMLDivElement | null>(null);
   const AUTOPLAY_MS = 4000;
 
-  // Clear existing timer
-  const clearTimer = () => {
-    if (timerRef.current) clearTimeout(timerRef.current);
-    timerRef.current = null;
+  const handleSelect = (index: number) => {
+    setTabIndex(index);
+    return false; // prevent scroll-to-top
   };
 
-  // Autoplay tabs
+  // Measure tab position dynamically
+  const updatePill = React.useCallback(() => {
+    const root = headerRef.current;
+    if (!root) return;
+
+    const tabs = root.querySelectorAll<HTMLElement>('[role="tab"]');
+    const el = tabs[tabIndex];
+    if (!el) return;
+
+    const parentRect = root.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
+
+    const left = rect.left - parentRect.left + root.scrollLeft;
+    setPill({ left, width: rect.width });
+  }, [tabIndex]);
+
+  // Keep pill updated on resize or container scroll
   React.useEffect(() => {
-    clearTimer();
-    if (!isPaused) {
-      timerRef.current = setTimeout(() => {
-        setTabIndex((i) => (i + 1) % labels.length);
-      }, AUTOPLAY_MS);
-    }
-    return clearTimer;
-  }, [tabIndex, isPaused]);
+    updatePill();
+
+    const observer = new ResizeObserver(() => updatePill());
+    const el = headerRef.current;
+    if (el) observer.observe(el);
+
+    const onScroll = () => updatePill();
+    el?.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      el?.removeEventListener('scroll', onScroll);
+    };
+  }, [updatePill]);
+
+  // Autoplay
+  React.useEffect(() => {
+    if (isPaused) return;
+    const t = setTimeout(
+      () => setTabIndex((i) => (i + 1) % labels.length),
+      AUTOPLAY_MS
+    );
+    return () => clearTimeout(t);
+  }, [tabIndex, isPaused, labels.length]);
 
   return (
     <div
@@ -43,42 +79,44 @@ export default function HeroTabs(): React.JSX.Element {
     >
       <Tabs
         selectedIndex={tabIndex}
-        onSelect={(index) => setTabIndex(index)}
+        onSelect={handleSelect}
+        focusTabOnClick={false}
       >
-        {/* Tab Header */}
-        <div className="relative mb-6 sm:mb-8 overflow-hidden">
-          {/* Animated background pill */}
+        {/* Tabs Header */}
+        <div className="relative mb-6 sm:mb-8">
           <div
-            className="absolute top-0 left-0 h-10 sm:h-11 rounded-xl bg-videomule-green transition-all duration-500 ease-in-out z-0"
-            style={{
-              width: `calc(25% - 0.5rem)`,
-              transform: `translateX(calc(${tabIndex * 100}% + ${tabIndex * 0.5}rem))`
-            }}
-          ></div>
-
-          <TabList
-            className="
-              relative z-10 flex flex-wrap md:flex-nowrap justify-between gap-2 sm:gap-3
-              border-b border-gray-200 pb-2
-            "
+            ref={headerRef}
+            className="relative bg-gray-100 rounded-xl overflow-x-auto scrollbar-hide flex flex-wrap md:flex-nowrap justify-start"
           >
-            {labels.map((label, i) => (
-              <Tab
-                key={label}
-                className={cn(
-                  'flex-1 text-center cursor-pointer px-3 sm:px-5 py-2 sm:py-2.5 text-sm md:text-base font-medium rounded-xl transition-all duration-300 whitespace-nowrap relative z-10',
-                  tabIndex === i
-                    ? 'text-white'
-                    : 'text-gray-700 bg-gray-100 hover:bg-videomule-green-hover hover:text-white'
-                )}
-              >
-                {label}
-              </Tab>
-            ))}
-          </TabList>
+            {/* Moving Background Pill */}
+            <div
+              className="absolute top-0 bottom-0 bg-videomule-green rounded-xl transition-all duration-500 ease-in-out"
+              style={{
+                width: `${pill.width}px`,
+                transform: `translateX(${pill.left}px)`
+              }}
+            />
+
+            <TabList className="relative z-10 flex w-max min-w-full text-center">
+              {labels.map((label, i) => (
+                <Tab
+                  key={label}
+                  className={cn(
+                    'flex-1 px-4 py-2 sm:px-5 sm:py-2.5 text-sm md:text-base font-medium cursor-pointer whitespace-nowrap transition-all duration-300',
+                    'focus:outline-none select-none relative z-10',
+                    tabIndex === i
+                      ? 'text-white'
+                      : 'text-gray-700 hover:text-white hover:bg-videomule-green-hover'
+                  )}
+                >
+                  {label}
+                </Tab>
+              ))}
+            </TabList>
+          </div>
         </div>
 
-        {/* Tab Panels */}
+        {/* Panels */}
         {[
           '/assets/sample/homepage/upload.png',
           '/assets/sample/homepage/script.png',

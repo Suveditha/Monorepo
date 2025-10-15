@@ -349,11 +349,11 @@ export default function StepProcess(): React.JSX.Element {
 
           {/* Export Options */}
           <div className="flex gap-3 mb-3 text-sm">
-            <div className="flex flex-1 items-center justify-between px-4 py-1.5 bg-gray-50 rounded-lg">
+            <div className="flex flex-1 items-center justify-between px-4 py-1.5 bg-videomule-gray/5 dark:bg-videomule-gray/20 rounded-lg">
               <span className="text-videomule-black font-medium">Quality</span>
               <span className="text-videomule-gray">1080p HD</span>
             </div>
-            <div className="flex flex-1 items-center justify-between px-4 py-1.5 bg-gray-50 rounded-lg">
+            <div className="flex flex-1 items-center justify-between px-4 py-1.5 bg-videomule-gray/5 dark:bg-videomule-gray/20 rounded-lg">
               <span className="text-videomule-black font-medium">Format</span>
               <span className="text-videomule-gray">MP4</span>
             </div>

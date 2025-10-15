@@ -2,6 +2,7 @@ import * as React from 'react';
 import Image from 'next/image';
 import { Download, Edit, Headphones, Mic } from 'lucide-react';
 
+import { routes } from '@workspace/routes';
 import { Button } from '@workspace/ui/components/buttonHome';
 import { cn } from '@workspace/ui/lib/utils';
 
@@ -129,6 +130,7 @@ export default function Feature(): React.JSX.Element {
         {/* Call to Action */}
         <div className="text-center">
           <Button
+            href={routes.dashboard.auth.SignIn}
             size="lg"
             className="text-lg px-10 py-3 hover-scale transition-all duration-300 hover:shadow-lg"
           >

@@ -2,6 +2,7 @@ import * as React from 'react';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 
+import { routes } from '@workspace/routes';
 import { Button } from '@workspace/ui/components/buttonHome';
 
 export default function Cta(): React.JSX.Element {
@@ -15,7 +16,7 @@ export default function Cta(): React.JSX.Element {
         className="absolute top-20 left-20 -rotate-15 md:block hidden dark:invert"
       />
       <Image
-        src="/assets/sample/homepage/button.avif"
+        src="/assets/sample/homepage/Button.avif"
         alt="CTA Image"
         width={70}
         height={80}
@@ -50,6 +51,7 @@ export default function Cta(): React.JSX.Element {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in delay-500">
             <Button
+              href={routes.dashboard.auth.SignIn}
               size="xl"
               className="border-videomule-white group bg-videomule-black text-lg px-10 py-4 hover:scale-105 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
             >

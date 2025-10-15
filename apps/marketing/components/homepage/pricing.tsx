@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Image from 'next/image';
 
+import { routes } from '@workspace/routes';
 import { Button } from '@workspace/ui/components/buttonHome';
 import { cn } from '@workspace/ui/lib/utils';
 
@@ -129,6 +130,7 @@ export default function Pricing(): React.JSX.Element {
                 </ul>
 
                 <Button
+                  href={routes.dashboard.auth.SignIn}
                   variant={isPlus ? 'default' : 'outline'}
                   className="w-full"
                 >

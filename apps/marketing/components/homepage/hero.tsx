@@ -1,13 +1,13 @@
+'use client';
+
 import * as React from 'react';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 
+import { routes } from '@workspace/routes';
 import { Button } from '@workspace/ui/components/buttonHome';
 
 import { Badge } from './components/badge';
-import HeroTabs from './components/tabs';
-
-//import Link from 'next/link';
 
 export default function Hero(): React.JSX.Element {
   return (
@@ -20,17 +20,21 @@ export default function Hero(): React.JSX.Element {
           >
             New! AI Voiceover Tool
           </Badge>
+
           <h1 className="max-w-2xl mx-auto font-bricolage text-5xl lg:text-7xl font-bold text-videomule-black mb-6 leading-none animate-fade-in delay-200">
             Add voice to any Screen Recording
             <span className="text-videomule-green">.</span>
           </h1>
+
           <p className="text-xl text-videomule-green-text mb-10 max-w-3xl mx-auto leading-[1.5em] animate-fade-in delay-300">
             Easily convert your screen recordings into engaging videos with AI
             voiceovers. Generate scripts, select realistic voices, and create
             ready-to-share content quickly and effortlessly.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20 animate-fade-in delay-500">
             <Button
+              href={routes.dashboard.auth.SignIn}
               size="lg"
               className="group text-lg px-8 py-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex items-center justify-center"
             >
@@ -64,7 +68,7 @@ export default function Hero(): React.JSX.Element {
           <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent pointer-events-none rounded-2xl"></div>
         </div>
       </div>
-      <HeroTabs />
+
       {/* Section separator */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
     </section>

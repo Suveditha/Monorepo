@@ -1,35 +1,31 @@
-import React from 'react';
-import type { Metadata } from 'next';
+import * as React from 'react';
 
-import WhyChoose from '~/components/homepage/choose';
-import Cta from '~/components/homepage/cta';
-import Difference from '~/components/homepage/difference';
-import Faq from '~/components/homepage/faq';
-import Feature from '~/components/homepage/feature';
-import Hero from '~/components/homepage/hero';
-import Pricing from '~/components/homepage/pricing';
-import StepProcess from '~/components/homepage/step-process';
-import Testimonial from '~/components/homepage/testimonial';
-import UseCases from '~/components/homepage/usecases';
-import { createTitle } from '~/lib/formatters';
+import { CTA } from '~/components/sections/cta';
+import { FAQ } from '~/components/sections/faq';
+import { VideomuleFeature } from '~/components/sections/feature';
+import { Hero } from '~/components/sections/hero';
+import { HowToUSe } from '~/components/sections/how-to-use';
+import { HowToUSeCard } from '~/components/sections/how-to-use-cards';
+import { Logos } from '~/components/sections/logos';
+import { Problem } from '~/components/sections/problem';
+import { Solution } from '~/components/sections/solution';
+import { Stats } from '~/components/sections/stats';
+import { Testimonials } from '~/components/sections/testimonials';
 
-export const metadata: Metadata = {
-  title: createTitle('Homepage')
-};
-
-export default function HomePage(): React.JSX.Element {
+export default function IndexPage(): React.JSX.Element {
   return (
     <>
       <Hero />
-      <StepProcess />
-      <Difference />
-      <Feature />
-      <Pricing />
-      <UseCases />
-      <WhyChoose />
-      <Testimonial />
-      <Faq />
-      <Cta />
+      <Logos />
+      <Problem />
+      <Solution />
+      <VideomuleFeature />
+      <HowToUSe />
+      <HowToUSeCard />
+      <Stats />
+      <Testimonials />
+      <FAQ />
+      <CTA />
     </>
   );
 }

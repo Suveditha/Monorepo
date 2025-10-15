@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Slot as SlotPrimitive } from 'radix-ui';
 
@@ -43,10 +44,23 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  href?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, href, ...props }, ref) => {
+    if (href) {
+      // If href is provided, render as Next.js Link
+      return (
+        <Link
+          href={href}
+          className={cn(buttonVariants({ variant, size, className }))}
+        >
+          {props.children}
+        </Link>
+      );
+    }
+
     const Comp = asChild ? SlotPrimitive.Slot : 'button';
     return (
       <Comp

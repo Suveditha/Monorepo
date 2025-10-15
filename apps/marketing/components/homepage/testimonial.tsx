@@ -18,7 +18,7 @@ export default function Testimonial(): React.JSX.Element {
     {
       name: 'Mike J., Business Owner',
       role: 'Entrepreneur, Marketing at VideoMule',
-      img: '/assets/sample/homepage/mike.avif',
+      img: '/assets/sample/homepage/Mike.avif',
       rating: 5,
       quote:
         'VideoMule has helped me create professional content more efficiently. The AI voice generation and accurate script creation make video production much easier. Highly recommended!'
@@ -26,7 +26,7 @@ export default function Testimonial(): React.JSX.Element {
     {
       name: 'Anna R., Freelancer',
       role: 'Independent Video Editor at VideoMule',
-      img: '/assets/sample/homepage/anna.avif',
+      img: '/assets/sample/homepage/Anna.avif',
       rating: 5,
       quote:
         'Voice quality and ease of access are my top priorities, and VideoMule delivers both. Now I can create professional video content with peace of mind.'
@@ -34,7 +34,7 @@ export default function Testimonial(): React.JSX.Element {
     {
       name: 'David P., YouTuber',
       role: 'Content Creator at DP Studio',
-      img: '/assets/sample/homepage/mike.avif',
+      img: '/assets/sample/homepage/Mike.avif',
       rating: 5,
       quote:
         'I have tried many tools, but VideoMule is simply the best for turning my recordings into professional-quality videos effortlessly.'
