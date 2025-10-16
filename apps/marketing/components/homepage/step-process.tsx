@@ -393,7 +393,7 @@ export default function StepProcess(): React.JSX.Element {
             <div
               key={i}
               id={step.Id}
-              className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in scroll-mt-40"
+              className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in"
             >
               <div
                 className={cn(

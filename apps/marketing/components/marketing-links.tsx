@@ -150,16 +150,6 @@ export const FOOTER_LINKS = [
         name: 'Edit yourself',
         href: `${routes.marketing.Index}#features`,
         external: false
-      },
-      {
-        name: 'Use your own voice (Coming Soon)',
-        href: '#',
-        external: false
-      },
-      {
-        name: 'AI Avatar (Coming Soon)',
-        href: '#',
-        external: false
       }
     ]
   },

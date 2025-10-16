@@ -51,7 +51,7 @@ export default function Pricing(): React.JSX.Element {
   ];
   return (
     <section
-      className="py-28 bg-videomule-light-green relative"
+      className="py-28 bg-videomule-yellow relative"
       id="pricing"
     >
       <div className="max-w-7xl mx-auto px-4">

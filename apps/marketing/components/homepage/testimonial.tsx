@@ -100,7 +100,7 @@ export default function Testimonial(): React.JSX.Element {
   const offset = (current + slidesPerView) * slideWidth;
 
   return (
-    <section className="py-28 bg-videomule-gray/3 relative overflow-hidden">
+    <section className="py-28 bg-videomule-yellow relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-12 left-12 text-videomule-black/10">
         <Star
