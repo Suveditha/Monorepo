@@ -213,11 +213,11 @@ export default function StepProcess(): React.JSX.Element {
             ].map((voice, i) => (
               <div
                 key={i}
-                className={`flex items-center justify-between p-4 rounded-xl border-2 cursor-pointer transition-all 
+                className={`flex items-center justify-between p-4 rounded-xl border-2 transition-all 
           ${
             voice.active
               ? 'bg-videomule-light-green border-videomule-green'
-              : 'bg-gray-50 border-gray-200 hover:border-videomule-green dark:bg-gray-800 dark:border-gray-700 dark:hover:border-orange-400/40'
+              : 'bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700'
           }`}
               >
                 <div className="flex items-center">

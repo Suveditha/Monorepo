@@ -47,7 +47,7 @@ export default function Hero(): React.JSX.Element {
         </div>
 
         {/* Browser Mockup with Dashboard */}
-        <div className="relative animate-fade-in delay-700 max-w-7xl mx-auto">
+        <div className="relative animate-fade-in delay-700 max-w-6xl mx-auto">
           <div className="bg-gray-100 rounded-2xl p-4 border border-gray-200 shadow-elegant hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse"></div>
@@ -58,9 +58,9 @@ export default function Hero(): React.JSX.Element {
               </div>
             </div>
             <Image
-              src="/assets/sample/homepage/hero-dashboard.png"
-              width={990}
-              height={616}
+              src="/assets/sample/homepage/hero.png"
+              width={900}
+              height={526}
               alt="VideoMule Dashboard"
               className="w-full rounded-lg shadow-2xl transition-all duration-300 hover:shadow-3xl"
             />
