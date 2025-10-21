@@ -304,7 +304,7 @@ export default function StepProcess(): React.JSX.Element {
             <div className="aspect-video bg-gray-800 dark:bg-videomule-gray/40 rounded-lg flex items-center justify-center relative overflow-hidden">
               <video
                 ref={videoRef}
-                src="https://gw-ai-social-media.b-cdn.net/VideoMule/audio.mp4"
+                src="https://gw-ai-social-media.b-cdn.net/VideoMule/subtitle.mp4"
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
                   isPlaying ? 'opacity-100' : 'opacity-0'
                 }`}

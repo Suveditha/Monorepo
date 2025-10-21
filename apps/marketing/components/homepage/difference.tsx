@@ -88,7 +88,7 @@ export default function Difference(): React.JSX.Element {
     {
       state: 'After VideoMule',
       color: 'bg-videomule-green/10 text-videomule-green',
-      src: 'https://gw-ai-social-media.b-cdn.net/VideoMule/audio.mp4',
+      src: 'https://gw-ai-social-media.b-cdn.net/VideoMule/subtitle.mp4',
       checkMark: Check,
       title: 'Professional AI Voiceover',
       points: [
