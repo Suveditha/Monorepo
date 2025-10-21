@@ -164,7 +164,7 @@ export default function StepProcess(): React.JSX.Element {
               <Edit className="w-4 h-4 mr-2" />
               Edit Script
             </div>
-            <div className="flex items-center justify-center px-10 py-3 border-2 border-videomule-green bg-transparent text-videomule-green shadow-button flex-1 rounded-full dark:bg-videomule-green dark:text-white dark:hover:bg-green-500">
+            <div className="flex items-center justify-center px-10 py-3 border-2 border-videomule-green bg-transparent text-videomule-green shadow-button flex-1 rounded-full dark:bg-videomule-green dark:text-videomule-white dark:hover:bg-green-500">
               Continue
             </div>
           </div>
@@ -405,7 +405,7 @@ export default function StepProcess(): React.JSX.Element {
                   <div
                     className={cn(
                       step.color,
-                      'w-12 h-12 p-3 rounded-xl flex items-center justify-center text-white mr-4'
+                      'w-12 h-12 p-3 rounded-xl flex items-center justify-center text-videomule-white mr-4'
                     )}
                   >
                     <step.logo className="w-6 h-6" />

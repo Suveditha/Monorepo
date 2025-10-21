@@ -131,7 +131,7 @@ export function Navbar(): React.JSX.Element {
                                     }
                                     className="group flex select-none flex-row items-center gap-4 rounded-md p-3 transition-colors hover:bg-videomule-light-green hover:text-videomule-black"
                                   >
-                                    <div className="flex size-10 shrink-0 items-center justify-center rounded-xl border bg-background text-muted-foreground transition-colors group-hover:text-foreground">
+                                    <div className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-[#e4e4e7] bg-background text-muted-foreground transition-colors group-hover:text-foreground">
                                       {subItem.icon}
                                     </div>
                                     <div>
