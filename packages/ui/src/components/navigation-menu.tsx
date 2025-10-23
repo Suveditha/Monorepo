@@ -77,7 +77,7 @@ function NavigationMenuItem({
 }
 
 const navigationMenuTriggerStyle = cva(
-  'cursor-pointer group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium hover:bg-videomule-light-green hover:text-accent-foreground focus:bg-videomule-light-green focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-videomule-light-green data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-videomule-light-green data-[state=open]:bg-videomule-light-green/50 focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1'
+  'cursor-pointer group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium hover:shadow-sm hover:text-accent-foreground hover:shadow-sm focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:shadow-sm data-[state=open]:text-accent-foreground data-[state=open]:hover:shadow-sm data-[state=open]:bg-videomule-white focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1'
 );
 
 export type NavigationMenuTriggerElement = React.ComponentRef<
@@ -171,7 +171,7 @@ function NavigationMenuLink({
     <NavigationMenuPrimitive.Link
       data-slot="navigation-menu-link"
       className={cn(
-        "cursor-pointer data-[active=true]:focus:bg-videomule-light-green data-[active=true]:hover:bg-videomule-light-green data-[active=true]:bg-videomule-light-green/50 data-[active=true]:text-accent-foreground hover:bg-videomule-light-green hover:text-accent-foreground focus:bg-videomule-light-green focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
+        "cursor-pointer data-[active=true]:hover:shadow-sm data-[active=true]:hover:shadow-sm data-[active=true]:bg-videomule-white data-[active=true]:text-accent-foreground hover:shadow-sm hover:text-accent-foreground hover:shadow-sm focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}

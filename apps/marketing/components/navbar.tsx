@@ -111,7 +111,7 @@ export function Navbar(): React.JSX.Element {
                     // Dropdown items
                     return (
                       <NavigationMenuItem key={index}>
-                        <NavigationMenuTrigger className="rounded-xl text-[15px] font-normal data-[state=open]:bg-videomule-light-green">
+                        <NavigationMenuTrigger className="rounded-xl text-[15px] font-normal data-[state=open]:bg-background">
                           {item.title}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
@@ -129,7 +129,7 @@ export function Navbar(): React.JSX.Element {
                                         ? 'noopener noreferrer'
                                         : undefined
                                     }
-                                    className="group flex select-none flex-row items-center gap-4 rounded-md p-3 transition-colors hover:bg-videomule-light-green hover:text-videomule-black"
+                                    className="group flex select-none flex-row items-center gap-4 rounded-md p-3 transition-colors hover:shadow-sm hover:text-videomule-black"
                                   >
                                     <div className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-[#e4e4e7] bg-background text-muted-foreground transition-colors group-hover:text-foreground">
                                       {subItem.icon}
@@ -184,7 +184,7 @@ export function Navbar(): React.JSX.Element {
                           navigationMenuTriggerStyle(),
                           'rounded-xl text-[15px] font-normal',
                           // styles apply when data-active="true" is present
-                          'data-[active=true]:bg-videomule-light-green data-[active=true]:text-videomule-black'
+                          'data-[active=true]:bg-videomule-white data-[active=true]:text-videomule-black'
                         )}
                       >
                         <Link
